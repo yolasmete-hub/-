@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "elsevier": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "elsevier-mcp"],
+      "env": {
+        "ELSEVIER_API_KEY": "3f694b0d8c0b3a64a6a1995ab77fbc5b"
+      }
+    }
+  }
+}
