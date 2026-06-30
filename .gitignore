@@ -1,0 +1,8 @@
+# Local environment / secrets
+.env
+.env.local
+*.local
+
+# Node
+node_modules/
+npm-debug.log*
