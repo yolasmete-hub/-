@@ -8,10 +8,10 @@
  * Design tokens
  * ------------------------------------------------------------------------ */
 :root {
-    --sol-purple-950: #1d0f33;
-    --sol-purple-900: #2a1547;
-    --sol-purple-700: #3f1f6b;
-    --sol-purple-500: #5c2f96;
+    --sol-purple-950: #1f0e31;
+    --sol-purple-900: #2e1547;
+    --sol-purple-700: #472369;
+    --sol-purple-500: #582c83;
     --sol-lavender: #c9b5ec;
     --sol-lavender-pale: #efe8fa;
     --sol-cream: #f7f1e6;
@@ -27,7 +27,7 @@
 
     --sol-container: 76rem;
     --sol-radius: 0.375rem;
-    --sol-shadow: 0.375rem 0.375rem 0 rgba(29, 15, 51, 0.18);
+    --sol-shadow: 0.375rem 0.375rem 0 rgba(31, 14, 49, 0.18);
     --sol-transition: 160ms ease;
 }
 
@@ -253,7 +253,7 @@ input[type="submit"]:hover {
 }
 
 .sol-header.is-scrolled {
-    box-shadow: 0 0.375rem 1.25rem rgba(29, 15, 51, 0.16);
+    box-shadow: 0 0.375rem 1.25rem rgba(31, 14, 49, 0.16);
 }
 
 .sol-header__inner {
@@ -466,7 +466,7 @@ input[type="submit"]:hover {
     position: relative;
     background: var(--sol-purple-900);
     background-image:
-        radial-gradient(ellipse 60rem 30rem at 110% -10%, rgba(92, 47, 150, 0.55), transparent 60%),
+        radial-gradient(ellipse 60rem 30rem at 110% -10%, rgba(88, 44, 131, 0.55), transparent 60%),
         radial-gradient(ellipse 50rem 26rem at -10% 110%, rgba(255, 92, 43, 0.22), transparent 55%);
     color: var(--sol-cream);
     padding-block: clamp(3.5rem, 9vw, 7rem);
@@ -509,9 +509,9 @@ input[type="submit"]:hover {
     inset: 0;
     background: linear-gradient(
         115deg,
-        rgba(29, 15, 51, 0.94) 15%,
-        rgba(63, 31, 107, 0.82) 55%,
-        rgba(92, 47, 150, 0.55)
+        rgba(31, 14, 49, 0.94) 15%,
+        rgba(71, 35, 105, 0.82) 55%,
+        rgba(88, 44, 131, 0.55)
     );
 }
 
@@ -703,7 +703,7 @@ input[type="submit"]:hover {
 
 .sol-card:hover {
     transform: translate(-0.125rem, -0.125rem);
-    box-shadow: 0.5rem 0.5rem 0 rgba(29, 15, 51, 0.22);
+    box-shadow: 0.5rem 0.5rem 0 rgba(31, 14, 49, 0.22);
 }
 
 .sol-card__title {
@@ -845,9 +845,36 @@ textarea:focus {
 .sol-footer__social {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     padding-block: 1.25rem;
     border-top: 1px solid rgba(201, 181, 236, 0.25);
+}
+
+/* Circular social icon buttons — use with the bundled images/icons/*.svg */
+.sol-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 0.125rem solid var(--sol-lavender);
+    border-radius: 50%;
+    transition: background var(--sol-transition), border-color var(--sol-transition),
+        transform var(--sol-transition);
+}
+
+.sol-social-icon:hover,
+.sol-social-icon:focus {
+    background: var(--sol-orange);
+    border-color: var(--sol-orange);
+    transform: translateY(-0.2rem);
+}
+
+.sol-social-icon img {
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .sol-footer__legal {
@@ -1065,7 +1092,7 @@ th {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, rgba(63, 31, 107, 0.55), rgba(255, 92, 43, 0.35));
+    background: linear-gradient(160deg, rgba(71, 35, 105, 0.55), rgba(255, 92, 43, 0.35));
     mix-blend-mode: multiply;
 }
 
@@ -1088,7 +1115,7 @@ th {
         display: none;
         background: var(--sol-purple-950);
         border-bottom: 0.25rem solid var(--sol-orange);
-        box-shadow: 0 1rem 1.5rem rgba(29, 15, 51, 0.35);
+        box-shadow: 0 1rem 1.5rem rgba(31, 14, 49, 0.35);
         padding: 1rem 1.25rem 1.5rem;
         max-height: calc(100vh - 5rem);
         overflow-y: auto;

@@ -14,7 +14,7 @@
   <rect width="1600" height="900" fill="#c9b5ec"/>
 
   <!-- back row -->
-  <g fill="#5c2f96" opacity="0.85">
+  <g fill="#582c83" opacity="0.85">
     <use xlink:href="#p" transform="translate(90 560) scale(0.9)"/>
     <use xlink:href="#p" transform="translate(250 540) scale(0.85)"/>
     <use xlink:href="#p" transform="translate(400 565) scale(0.95)"/>
@@ -36,7 +36,7 @@
   </g>
 
   <!-- middle row -->
-  <g fill="#3f1f6b">
+  <g fill="#472369">
     <use xlink:href="#p" transform="translate(30 680) scale(1.15)"/>
     <use xlink:href="#p" transform="translate(220 700) scale(1.25)"/>
     <use xlink:href="#p" transform="translate(420 685) scale(1.18)"/>
@@ -49,7 +49,7 @@
   </g>
 
   <!-- front row -->
-  <g fill="#1d0f33">
+  <g fill="#1f0e31">
     <use xlink:href="#p" transform="translate(110 880) scale(1.7)"/>
     <use xlink:href="#p" transform="translate(400 900) scale(1.85)"/>
     <use xlink:href="#p" transform="translate(700 885) scale(1.75)"/>

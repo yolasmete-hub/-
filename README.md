@@ -32,7 +32,7 @@ Joomla kurmadan görünümü incelemek için `preview/index.html` dosyasını ta
 
 ## Kurulum
 
-1. Şablon paketini üretin (aşağıdaki *Paketleme* bölümü) veya hazır `dist/tpl_solidarity_1.1.0.zip` dosyasını kullanın.
+1. Şablon paketini üretin (aşağıdaki *Paketleme* bölümü) veya hazır `dist/tpl_solidarity_1.2.0.zip` dosyasını kullanın.
 2. Joomla yönetici panelinde **System → Install → Extensions** üzerinden zip'i yükleyin.
 3. **System → Site Template Styles** ekranında **solidarity**'yi varsayılan yapın.
 4. Şablon stilini açıp **Marka** sekmesinden logo, site başlığı, slogan ve üstteki turuncu eylem düğmesinin (ör. bağış) adresini ayarlayın.
@@ -68,9 +68,24 @@ Joomla kurmadan görünümü incelemek için `preview/index.html` dosyasını ta
 5. **signup** → E-bülten form modülü
 6. **footer-a…d** → menü/iletişim modülleri, **social** → sosyal bağlantılar
 
+## Renk paleti
+
+Parti markalarında yaygın belgelenen resmî mor **#582C83** paletin ana rengidir; koyu/açık tonlar (`--sol-purple-950/900/700`), lavanta (`#C9B5EC`), krem (`#F7F1E6`), canlı turuncu (`#FF5C2B`) ve altın (`#FFC531`) ile tamamlanır. Tümü `:root` değişkeni olarak tanımlıdır ve `user.css`'ten ezilebilir.
+
+## Sosyal ikonlar
+
+`images/icons/` altında instagram, x, youtube ve facebook için krem renkli minimal SVG ikonlar bulunur. Footer'daki `social` pozisyonuna Özel HTML modülüyle şöyle eklenir:
+
+```html
+<a class="sol-social-icon" href="https://instagram.com/hesabiniz">
+    <img src="templates/solidarity/images/icons/instagram.svg" alt="">
+    <span class="visually-hidden">Instagram</span>
+</a>
+```
+
 ## Yardımcı CSS sınıfları
 
-`sol-btn`, `sol-btn--accent`, `sol-btn--ghost`, `sol-btn--light`, `sol-eyebrow`, `sol-stat`, `sol-grid-2/3/4`, `sol-photo-duotone` (fotoğraflara mor-turuncu duoton efekti).
+`sol-btn`, `sol-btn--accent`, `sol-btn--ghost`, `sol-btn--light`, `sol-eyebrow`, `sol-stat`, `sol-grid-2/3/4`, `sol-photo-duotone` (fotoğraflara mor-turuncu duoton efekti), `sol-social-icon` (dairesel sosyal ikon düğmesi).
 
 ## Paketleme
 
