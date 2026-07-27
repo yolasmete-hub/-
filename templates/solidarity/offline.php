@@ -25,6 +25,8 @@ $cssPath  = $this->baseurl . '/templates/' . $this->template . '/css/template.cs
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
     <jdoc:include type="metas" />
+    <jdoc:include type="styles" />
+    <jdoc:include type="scripts" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo $cssPath; ?>">
     <style>

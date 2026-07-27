@@ -111,7 +111,7 @@ if ($menu !== null && $menu->home) {
     <header class="sol-header<?php echo $stickyHeader ? ' sol-header--sticky' : ''; ?>" id="sol-header">
         <div class="sol-container sol-header__inner">
             <a class="sol-brand" href="<?php echo $this->baseurl; ?>/">
-                <img class="sol-brand__logo" src="<?php echo $logo; ?>" alt="<?php echo $siteTitle !== '' ? $siteTitle : $sitename; ?>">
+                <img class="sol-brand__logo" src="<?php echo htmlspecialchars($logo, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo $siteTitle !== '' ? $siteTitle : $sitename; ?>">
                 <?php if ($siteTitle !== '') : ?>
                     <span class="sol-brand__text">
                         <span class="sol-brand__title"><?php echo $siteTitle; ?></span>
@@ -122,7 +122,7 @@ if ($menu !== null && $menu->home) {
                 <?php endif; ?>
             </a>
 
-            <nav class="sol-nav" id="sol-nav" aria-label="<?php echo Text::_('TPL_SOLIDARITY_MAIN_NAV'); ?>">
+            <nav class="sol-nav" id="sol-nav" aria-label="<?php echo Text::_('TPL_SOLIDARITY_MAIN_NAV'); ?>" data-submenu-label="<?php echo Text::_('TPL_SOLIDARITY_TOGGLE_SUBMENU'); ?>">
                 <jdoc:include type="modules" name="menu" style="none" />
                 <?php if ($this->countModules('search', true)) : ?>
                     <div class="sol-nav__search">
@@ -239,7 +239,7 @@ if ($menu !== null && $menu->home) {
 
     <footer class="sol-footer">
         <div class="sol-container">
-            <?php if ($this->countModules('footer-a or footer-b or footer-c or footer-d', true)) : ?>
+            <?php if ($this->countModules('footer-a', true) || $this->countModules('footer-b', true) || $this->countModules('footer-c', true) || $this->countModules('footer-d', true)) : ?>
                 <div class="sol-footer__grid">
                     <?php foreach (['footer-a', 'footer-b', 'footer-c', 'footer-d'] as $footerPosition) : ?>
                         <?php if ($this->countModules($footerPosition, true)) : ?>

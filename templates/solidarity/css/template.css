@@ -354,10 +354,16 @@ input[type="submit"]:hover {
     z-index: 110;
 }
 
-.sol-nav li:hover > ul,
-.sol-nav li:focus-within > ul,
 .sol-nav li.is-open > ul {
     display: flex;
+}
+
+/* Hover/focus dropdowns are desktop-only; on mobile the accordion (.is-open) rules */
+@media (min-width: 62rem) {
+    .sol-nav li:hover > ul,
+    .sol-nav li:focus-within > ul {
+        display: flex;
+    }
 }
 
 .sol-nav li > ul a {
@@ -1093,14 +1099,6 @@ th {
         background: transparent;
         padding: 0 0 0 0.9rem;
         margin: 0;
-    }
-
-    .sol-nav li.is-open > ul {
-        display: block;
-    }
-
-    .sol-nav li:hover > ul:not(.is-open) {
-        display: none;
     }
 
     .sol-nav li.is-open > ul {

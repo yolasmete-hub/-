@@ -27,6 +27,7 @@
     // --- Submenu accordion (mobile) -----------------------------------
     if (nav) {
         var parents = nav.querySelectorAll('li');
+        var submenuLabel = nav.getAttribute('data-submenu-label') || 'Toggle submenu';
 
         parents.forEach(function (li) {
             var submenu = li.querySelector(':scope > ul');
@@ -36,10 +37,12 @@
             }
 
             var link = li.querySelector(':scope > a, :scope > span');
+            var itemText = link ? link.textContent.trim() : '';
             var button = document.createElement('button');
             button.type = 'button';
             button.className = 'sol-submenu-toggle';
             button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-label', itemText ? submenuLabel + ': ' + itemText : submenuLabel);
             button.innerHTML = '<span aria-hidden="true">&#9662;</span>';
 
             button.addEventListener('click', function (event) {
@@ -75,14 +78,23 @@
         var originals = Array.prototype.slice.call(ticker.children);
 
         if (originals.length) {
-            var safety = 0;
-
-            while (ticker.scrollWidth < window.innerWidth * 2 && safety < 10) {
-                originals.forEach(function (node) {
+            // The keyframe wraps at -50%, so the track must always hold an
+            // even multiple of the original set: duplicate the set once,
+            // then keep doubling the whole track until it is wide enough.
+            var appendClones = function (nodes) {
+                nodes.forEach(function (node) {
                     var clone = node.cloneNode(true);
                     clone.setAttribute('aria-hidden', 'true');
                     ticker.appendChild(clone);
                 });
+            };
+
+            appendClones(originals);
+
+            var safety = 0;
+
+            while (ticker.scrollWidth < window.innerWidth * 2 && safety < 8) {
+                appendClones(Array.prototype.slice.call(ticker.children));
                 safety += 1;
             }
         }
