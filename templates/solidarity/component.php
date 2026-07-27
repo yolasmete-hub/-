@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
 $wa = $this->getWebAssetManager();
-$wa->registerAndUseStyle('template.solidarity.main', 'templates/' . $this->template . '/css/template.css', ['version' => '1.0.0']);
+$wa->registerAndUseStyle('template.solidarity.main', 'templates/' . $this->template . '/css/template.css', ['version' => '1.1.0']);
 
 ?>
 <!DOCTYPE html>

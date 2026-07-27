@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" role="img" aria-label="Placeholder crowd illustration">
+  <!-- Original abstract crowd placeholder for the photo hero. Replace with a real photo. -->
+  <defs>
+    <g id="p">
+      <circle cx="0" cy="0" r="34"/>
+      <rect x="-56" y="24" width="112" height="140" rx="44"/>
+    </g>
+    <g id="flag">
+      <rect x="-3" y="-150" width="6" height="150" rx="3"/>
+      <path d="M3 -148 C 30 -156, 55 -140, 82 -148 L 82 -104 C 55 -96, 30 -112, 3 -104 Z"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="#c9b5ec"/>
+
+  <!-- back row -->
+  <g fill="#5c2f96" opacity="0.85">
+    <use xlink:href="#p" transform="translate(90 560) scale(0.9)"/>
+    <use xlink:href="#p" transform="translate(250 540) scale(0.85)"/>
+    <use xlink:href="#p" transform="translate(400 565) scale(0.95)"/>
+    <use xlink:href="#p" transform="translate(560 545) scale(0.88)"/>
+    <use xlink:href="#p" transform="translate(720 560) scale(0.92)"/>
+    <use xlink:href="#p" transform="translate(880 542) scale(0.86)"/>
+    <use xlink:href="#p" transform="translate(1040 562) scale(0.94)"/>
+    <use xlink:href="#p" transform="translate(1200 548) scale(0.9)"/>
+    <use xlink:href="#p" transform="translate(1360 566) scale(0.87)"/>
+    <use xlink:href="#p" transform="translate(1510 550) scale(0.93)"/>
+  </g>
+
+  <!-- flags rising above the crowd -->
+  <g>
+    <use xlink:href="#flag" fill="#ff5c2b" transform="translate(330 560) rotate(-8)"/>
+    <use xlink:href="#flag" fill="#ffc531" transform="translate(760 545) rotate(6)"/>
+    <use xlink:href="#flag" fill="#ff5c2b" transform="translate(1130 560) rotate(-5)"/>
+    <use xlink:href="#flag" fill="#f7f1e6" transform="translate(1440 552) rotate(9)"/>
+  </g>
+
+  <!-- middle row -->
+  <g fill="#3f1f6b">
+    <use xlink:href="#p" transform="translate(30 680) scale(1.15)"/>
+    <use xlink:href="#p" transform="translate(220 700) scale(1.25)"/>
+    <use xlink:href="#p" transform="translate(420 685) scale(1.18)"/>
+    <use xlink:href="#p" transform="translate(620 705) scale(1.28)"/>
+    <use xlink:href="#p" transform="translate(820 688) scale(1.2)"/>
+    <use xlink:href="#p" transform="translate(1020 702) scale(1.26)"/>
+    <use xlink:href="#p" transform="translate(1220 686) scale(1.17)"/>
+    <use xlink:href="#p" transform="translate(1420 704) scale(1.24)"/>
+    <use xlink:href="#p" transform="translate(1590 690) scale(1.2)"/>
+  </g>
+
+  <!-- front row -->
+  <g fill="#1d0f33">
+    <use xlink:href="#p" transform="translate(110 880) scale(1.7)"/>
+    <use xlink:href="#p" transform="translate(400 900) scale(1.85)"/>
+    <use xlink:href="#p" transform="translate(700 885) scale(1.75)"/>
+    <use xlink:href="#p" transform="translate(1000 905) scale(1.9)"/>
+    <use xlink:href="#p" transform="translate(1290 882) scale(1.72)"/>
+    <use xlink:href="#p" transform="translate(1540 902) scale(1.82)"/>
+  </g>
+</svg>

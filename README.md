@@ -2,7 +2,29 @@
 
 **Solidarity**, aktivist/hareket tarzı siteler için sıfırdan yazılmış özgün bir Joomla 5 site şablonudur. Tasarım dili: krem zemin üzerinde derin mor + canlı turuncu palet, kalın–dar büyük harfli başlık tipografisi (Anton), bayrak motifi, dev başlıklı hero bandı, kayan şerit (ticker), sert gölgeli kartlar, lavanta e-bülten bandı ve koyu mor footer.
 
-> Not: Bu şablon workingfamilies.org sitesinin tasarım dilinden **esinlenerek** tamamen özgün olarak yazılmıştır. Sitenin kodu, logosu, görselleri veya metinleri kopyalanmamıştır; kendi marka öğelerinizi ve içeriğinizi kullanın.
+> Not: Bu şablon workingfamilies.org sitesinin tasarım dilini **birebir takip edecek şekilde** tamamen özgün olarak yazılmıştır. Sitenin kodu, logosu, görselleri veya metinleri telif nedeniyle kopyalanmamıştır; kendi marka öğelerinizi ve içeriğinizi kullanın.
+
+## Birebir görünüm için tipografi
+
+Orijinal sitenin başlık yazısı, ticari lisanslı çok ağır–dar bir grotesk ailedir (Druk tarzı; ücretsiz dağıtılamaz). Şablon varsayılan olarak en yakın açık kaynak karşılıkları kullanır: başlıklar için **Anton**, gövde için **Public Sans** (Google Fonts). Fontu birebir eşlemek isterseniz:
+
+1. Ticari fontun web lisansını satın alıp dosyalarını `templates/solidarity/fonts/` içine koyun.
+2. `templates/solidarity/css/user.css` dosyasını oluşturun (şablon varsa otomatik yükler):
+
+```css
+@font-face {
+    font-family: "MarkaDisplay";
+    src: url("../fonts/marka-display.woff2") format("woff2");
+    font-display: swap;
+}
+
+:root {
+    --sol-font-display: "MarkaDisplay", "Anton", sans-serif;
+    /* İsterseniz gövde fontunu da değiştirin: --sol-font-body: ... */
+}
+```
+
+Tüm renkler de `:root` değişkenleriyle (`--sol-purple-950`, `--sol-orange` vb.) `user.css`'ten ince ayar yapılabilir.
 
 ## Önizleme
 
@@ -10,7 +32,7 @@ Joomla kurmadan görünümü incelemek için `preview/index.html` dosyasını ta
 
 ## Kurulum
 
-1. Şablon paketini üretin (aşağıdaki *Paketleme* bölümü) veya hazır `dist/tpl_solidarity_1.0.0.zip` dosyasını kullanın.
+1. Şablon paketini üretin (aşağıdaki *Paketleme* bölümü) veya hazır `dist/tpl_solidarity_1.1.0.zip` dosyasını kullanın.
 2. Joomla yönetici panelinde **System → Install → Extensions** üzerinden zip'i yükleyin.
 3. **System → Site Template Styles** ekranında **solidarity**'yi varsayılan yapın.
 4. Şablon stilini açıp **Marka** sekmesinden logo, site başlığı, slogan ve üstteki turuncu eylem düğmesinin (ör. bağış) adresini ayarlayın.
@@ -39,6 +61,7 @@ Joomla kurmadan görünümü incelemek için `preview/index.html` dosyasını ta
 ## Ana sayfa tarifi (workingfamilies.org düzenine eş yapı)
 
 1. **hero** → Özel HTML: `<span class="sol-eyebrow">Üst başlık</span> <h1>Dev slogan <em>vurgulu söz</em></h1> <p>Alt metin</p> <a class="sol-btn sol-btn--accent">Katıl</a> <a class="sol-btn sol-btn--light">Bilgi</a>`
+   - Orijinal sitedeki gibi **fotoğraflı hero** için modülün en başına ekleyin: `<div class="sol-hero__media"><img src="images/miting.jpg" alt=""></div>` — fotoğraf otomatik olarak mor duoton yıkamayla tam genişlik arka plana yerleşir.
 2. **ticker** → Özel HTML: `<p>★ Slogan 1</p><p>★ Slogan 2</p>…`
 3. **top-a** → 3 adet Özel HTML modülü (başlık açık) → otomatik kart ızgarası
 4. **top-b** → Özel HTML: `sol-grid-3` + `sol-stat` sınıflarıyla istatistik bandı
