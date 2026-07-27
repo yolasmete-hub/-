@@ -28,12 +28,12 @@ if ((int) $this->params->get('googleFonts', 1) === 1) {
     );
 }
 
-$wa->registerAndUseStyle('template.solidarity.main', 'templates/' . $this->template . '/css/template.css', ['version' => '1.2.0']);
-$wa->registerAndUseScript('template.solidarity.main', 'templates/' . $this->template . '/js/template.js', ['version' => '1.2.0'], ['defer' => true]);
+$wa->registerAndUseStyle('template.solidarity.main', 'templates/' . $this->template . '/css/template.css', ['version' => '1.3.0']);
+$wa->registerAndUseScript('template.solidarity.main', 'templates/' . $this->template . '/js/template.js', ['version' => '1.3.0'], ['defer' => true]);
 
 // Site-specific overrides (e.g. licensed brand fonts): create css/user.css
 if (is_file(JPATH_ROOT . '/templates/' . $this->template . '/css/user.css')) {
-    $wa->registerAndUseStyle('template.solidarity.user', 'templates/' . $this->template . '/css/user.css', ['version' => '1.2.0'], [], ['template.solidarity.main']);
+    $wa->registerAndUseStyle('template.solidarity.user', 'templates/' . $this->template . '/css/user.css', ['version' => '1.3.0'], [], ['template.solidarity.main']);
 }
 
 $option   = $input->getCmd('option', '');
@@ -230,6 +230,14 @@ if ($menu !== null && $menu->home) {
         <section class="sol-section sol-section--purple">
             <div class="sol-container">
                 <jdoc:include type="modules" name="bottom-b" style="band" />
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <?php if ($this->countModules('cta', true)) : ?>
+        <section class="sol-cta">
+            <div class="sol-container">
+                <jdoc:include type="modules" name="cta" style="none" />
             </div>
         </section>
     <?php endif; ?>

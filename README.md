@@ -32,7 +32,7 @@ Joomla kurmadan görünümü incelemek için `preview/index.html` dosyasını ta
 
 ## Kurulum
 
-1. Şablon paketini üretin (aşağıdaki *Paketleme* bölümü) veya hazır `dist/tpl_solidarity_1.2.0.zip` dosyasını kullanın.
+1. Şablon paketini üretin (aşağıdaki *Paketleme* bölümü) veya hazır `dist/tpl_solidarity_1.3.0.zip` dosyasını kullanın.
 2. Joomla yönetici panelinde **System → Install → Extensions** üzerinden zip'i yükleyin.
 3. **System → Site Template Styles** ekranında **solidarity**'yi varsayılan yapın.
 4. Şablon stilini açıp **Marka** sekmesinden logo, site başlığı, slogan ve üstteki turuncu eylem düğmesinin (ör. bağış) adresini ayarlayın.
@@ -52,29 +52,37 @@ Joomla kurmadan görünümü incelemek için `preview/index.html` dosyasını ta
 | `sidebar` | İçerik yanı (yayınlanırsa düzen otomatik iki sütuna geçer) |
 | `main-top` / `main-bottom` | Bileşen üstü/altı kart alanları |
 | `bottom-a` / `bottom-b` | Alt krem / mor bölümler |
+| `cta` | Turuncu büyük eylem çağrısı bandı |
 | `signup` | Lavanta e-bülten bandı |
 | `footer-a…d` | Koyu footer sütunları (*footer* chrome ile) |
 | `social` | Footer'da sosyal bağlantılar |
 | `copyright` | Yasal metin (boşsa şablon parametresindeki metin gösterilir) |
 | `debug` | Hata ayıklama |
 
-## Ana sayfa tarifi (workingfamilies.org düzenine eş yapı)
+## Ana sayfa tarifi (birebir bölüm sırası)
 
-1. **hero** → Özel HTML: `<span class="sol-eyebrow">Üst başlık</span> <h1>Dev slogan <em>vurgulu söz</em></h1> <p>Alt metin</p> <a class="sol-btn sol-btn--accent">Katıl</a> <a class="sol-btn sol-btn--light">Bilgi</a>`
-   - Orijinal sitedeki gibi **fotoğraflı hero** için modülün en başına ekleyin: `<div class="sol-hero__media"><img src="images/miting.jpg" alt=""></div>` — fotoğraf otomatik olarak mor duoton yıkamayla tam genişlik arka plana yerleşir.
-2. **ticker** → Özel HTML: `<p>★ Slogan 1</p><p>★ Slogan 2</p>…`
-3. **top-a** → 3 adet Özel HTML modülü (başlık açık) → otomatik kart ızgarası
-4. **top-b** → Özel HTML: `sol-grid-3` + `sol-stat` sınıflarıyla istatistik bandı
-5. **signup** → E-bülten form modülü
-6. **footer-a…d** → menü/iletişim modülleri, **social** → sosyal bağlantılar
+Referans sitenin ana sayfa akışı sırasıyla şu pozisyonlarla kurulur (tamamı `preview/index.html`'de örneklenmiştir):
+
+| # | Bölüm | Pozisyon | İçerik |
+|---|---|---|---|
+| 1 | Fotoğraflı hero | `hero` | Özel HTML: başa `<div class="sol-hero__media"><img …></div>` (mor duoton otomatik), ardından `sol-eyebrow` + `<h1>` + butonlar |
+| 2 | Kayan şerit | `ticker` | Özel HTML: her slogan ayrı `<p>★ …</p>` |
+| 3 | Misyon girişi | `top-a` | Özel HTML, modül sınıfı **sol-plain** → kartsız ortalanmış metin + buton |
+| 4 | Gündem ızgarası | `top-b` | Özel HTML: `sol-grid-3` içinde `sol-issue` blokları (`images/icons/` piktogramlarıyla) |
+| 5 | Aday kartları | `bottom-a` | Özel HTML: `sol-person` kartları (fotoğraf otomatik duoton, `sol-tag` şehir çipi) |
+| 6 | Şehir/şube ızgarası | `bottom-b` | Özel HTML: `sol-grid-4` içinde `sol-chip` bağlantıları |
+| 7 | Haberler | ana içerik | Menü öğesini com_content *Featured/Blog* düzenine bağlayın — kartlara otomatik dönüşür |
+| 8 | Turuncu çağrı bandı | `cta` | Özel HTML: `<h2>` + `sol-btn sol-btn--dark` |
+| 9 | Kayıt bandı | `signup` | Form modülü: e-posta + posta kodu (`sol-input--small`) + `sol-btn sol-btn--accent` |
+| 10 | Footer | `footer-a…d`, `social`, `copyright` | Sütunlar, `sol-social-icon` ikon düğmeleri, `sol-disclaimer` yasal beyan kutusu |
 
 ## Renk paleti
 
 Parti markalarında yaygın belgelenen resmî mor **#582C83** paletin ana rengidir; koyu/açık tonlar (`--sol-purple-950/900/700`), lavanta (`#C9B5EC`), krem (`#F7F1E6`), canlı turuncu (`#FF5C2B`) ve altın (`#FFC531`) ile tamamlanır. Tümü `:root` değişkeni olarak tanımlıdır ve `user.css`'ten ezilebilir.
 
-## Sosyal ikonlar
+## İkonlar
 
-`images/icons/` altında instagram, x, youtube ve facebook için krem renkli minimal SVG ikonlar bulunur. Footer'daki `social` pozisyonuna Özel HTML modülüyle şöyle eklenir:
+`images/icons/` altında krem renkli minimal SVG ikonlar bulunur: sosyal (instagram, x, youtube, facebook) ve gündem piktogramları (wage, health, housing, climate, justice, megaphone — `sol-issue` blokları için). Footer'daki `social` pozisyonuna Özel HTML modülüyle şöyle eklenir:
 
 ```html
 <a class="sol-social-icon" href="https://instagram.com/hesabiniz">
@@ -85,7 +93,7 @@ Parti markalarında yaygın belgelenen resmî mor **#582C83** paletin ana rengid
 
 ## Yardımcı CSS sınıfları
 
-`sol-btn`, `sol-btn--accent`, `sol-btn--ghost`, `sol-btn--light`, `sol-eyebrow`, `sol-stat`, `sol-grid-2/3/4`, `sol-photo-duotone` (fotoğraflara mor-turuncu duoton efekti), `sol-social-icon` (dairesel sosyal ikon düğmesi).
+`sol-btn`, `sol-btn--accent`, `sol-btn--ghost`, `sol-btn--light`, `sol-btn--dark`, `sol-eyebrow`, `sol-stat`, `sol-grid-2/3/4`, `sol-photo-duotone`, `sol-social-icon`, `sol-issue` (ikonlu gündem bloğu), `sol-person`/`sol-person__photo` (duoton aday kartı), `sol-tag` (altın çip), `sol-chip` (şehir bağlantısı), `sol-disclaimer` (yasal beyan kutusu), `sol-plain` (modül sınıfı — kart görünümünü kaldırır).
 
 ## Paketleme
 

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder portrait">
+  <!-- Original placeholder portrait. Replace with a real photo. -->
+  <rect width="400" height="300" fill="#c9b5ec"/>
+  <circle cx="200" cy="118" r="62" fill="#472369"/>
+  <path d="M84 300c0-70 52-112 116-112s116 42 116 112Z" fill="#472369"/>
+  <rect y="272" width="400" height="28" fill="#582c83" opacity="0.5"/>
+</svg>

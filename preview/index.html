@@ -54,6 +54,7 @@
         </div>
     </header>
 
+    <!-- 1. Hero: fotoğraf + dev slogan -->
     <div class="sol-hero">
         <div class="sol-container">
             <div class="sol-hero__media">
@@ -61,7 +62,7 @@
             </div>
             <span class="sol-eyebrow">Birlikte daha güçlüyüz</span>
             <h1>Çalışan herkes için <em>adil bir gelecek</em> kuruyoruz</h1>
-            <p>Bu bir yer tutucu metindir: "hero" pozisyonuna yayınlayacağınız Özel HTML modülünün içeriği burada görünür. Kendi sloganınızı ve çağrınızı yazın.</p>
+            <p>Bu bir yer tutucu metindir: "hero" pozisyonuna yayınlayacağınız Özel HTML modülünün içeriği burada görünür.</p>
             <p>
                 <a class="sol-btn sol-btn--accent" href="#">Harekete Katıl</a>
                 <a class="sol-btn sol-btn--light" href="#">Daha Fazla Bilgi</a>
@@ -69,6 +70,7 @@
         </div>
     </div>
 
+    <!-- 2. Kayan şerit -->
     <div class="sol-ticker" data-sol-ticker>
         <div class="sol-ticker__track">
             <p>★ Adil ücret</p>
@@ -79,39 +81,119 @@
         </div>
     </div>
 
+    <!-- 3. Misyon girişi (top-a, "sol-plain" modül sınıfıyla) -->
     <section class="sol-section sol-section--cream">
         <div class="sol-container">
-            <div class="sol-card">
-                <h3 class="sol-card__title">Gündemimiz</h3>
-                <p>"top-a" pozisyonundaki her modül böyle bir karta dönüşür. Kart chrome'u otomatik uygulanır.</p>
-                <p><a class="sol-btn sol-btn--ghost" href="#">İncele</a></p>
-            </div>
-            <div class="sol-card">
-                <h3 class="sol-card__title">Kampanyalar</h3>
-                <p>Yan yana birden çok modül yayınlarsanız otomatik olarak ızgaraya dizilirler.</p>
-                <p><a class="sol-btn sol-btn--ghost" href="#">İncele</a></p>
-            </div>
-            <div class="sol-card">
-                <h3 class="sol-card__title">Gönüllü Ol</h3>
-                <p>Kenarlıklı kartlar, sert gölge ve turuncu başlık çizgisi temanın imzasıdır.</p>
-                <p><a class="sol-btn sol-btn--ghost" href="#">İncele</a></p>
+            <div class="sol-card sol-plain">
+                <span class="sol-eyebrow">Biz kimiz</span>
+                <h2>Sıradan insanların örgütlü gücü</h2>
+                <p>Yer tutucu tanıtım paragrafı: hareketinizin misyonunu iki üç cümleyle anlatın. "top-a" pozisyonunda "sol-plain" modül sınıfıyla kartsız, ortalanmış görünüm elde edilir.</p>
+                <p><a class="sol-btn sol-btn--ghost" href="#">Hikâyemizi Okuyun</a></p>
             </div>
         </div>
     </section>
 
+    <!-- 4. Gündem ızgarası (top-b, mor bant + ikonlar) -->
     <section class="sol-section sol-section--purple">
         <div class="sol-container">
             <div class="sol-band">
-                <h2 class="sol-band__title">Rakamlarla Hareket</h2>
-                <div class="sol-grid-3" style="margin-top:2rem; text-align:center;">
-                    <div><span class="sol-stat">120+</span><p>Yerelde örgütlü topluluk</p></div>
-                    <div><span class="sol-stat">48</span><p>Desteklenen aday</p></div>
-                    <div><span class="sol-stat">%86</span><p>Kazanılan kampanya</p></div>
+                <h2 class="sol-band__title">Mücadele Alanlarımız</h2>
+                <div class="sol-grid-3" style="margin-top:2.5rem;">
+                    <div class="sol-issue">
+                        <a href="#">
+                            <span class="sol-issue__icon"><img src="../templates/solidarity/images/icons/wage.svg" alt=""></span>
+                            <span class="sol-issue__label">Adil Ücret</span>
+                        </a>
+                    </div>
+                    <div class="sol-issue">
+                        <a href="#">
+                            <span class="sol-issue__icon"><img src="../templates/solidarity/images/icons/health.svg" alt=""></span>
+                            <span class="sol-issue__label">Herkese Sağlık</span>
+                        </a>
+                    </div>
+                    <div class="sol-issue">
+                        <a href="#">
+                            <span class="sol-issue__icon"><img src="../templates/solidarity/images/icons/housing.svg" alt=""></span>
+                            <span class="sol-issue__label">Erişilebilir Konut</span>
+                        </a>
+                    </div>
+                    <div class="sol-issue">
+                        <a href="#">
+                            <span class="sol-issue__icon"><img src="../templates/solidarity/images/icons/climate.svg" alt=""></span>
+                            <span class="sol-issue__label">İklim Adaleti</span>
+                        </a>
+                    </div>
+                    <div class="sol-issue">
+                        <a href="#">
+                            <span class="sol-issue__icon"><img src="../templates/solidarity/images/icons/justice.svg" alt=""></span>
+                            <span class="sol-issue__label">Eşit Yurttaşlık</span>
+                        </a>
+                    </div>
+                    <div class="sol-issue">
+                        <a href="#">
+                            <span class="sol-issue__icon"><img src="../templates/solidarity/images/icons/megaphone.svg" alt=""></span>
+                            <span class="sol-issue__label">Örgütlenme</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 5. Adaylar (bottom-a benzeri krem bölüm, kişi kartları) -->
+    <section class="sol-section sol-section--cream">
+        <div class="sol-container">
+            <div class="sol-card sol-plain">
+                <span class="sol-eyebrow">Desteklediklerimiz</span>
+                <h2>Adaylarımız</h2>
+            </div>
+            <div class="sol-person">
+                <span class="sol-person__photo"><img src="../templates/solidarity/images/portrait-placeholder.svg" alt=""></span>
+                <div class="sol-person__body">
+                    <h3 class="sol-person__name">Örnek Aday</h3>
+                    <p class="sol-person__role">Belediye Meclisi Adayı</p>
+                    <span class="sol-tag">İstanbul</span>
+                </div>
+            </div>
+            <div class="sol-person">
+                <span class="sol-person__photo"><img src="../templates/solidarity/images/portrait-placeholder.svg" alt=""></span>
+                <div class="sol-person__body">
+                    <h3 class="sol-person__name">Yer Tutucu İsim</h3>
+                    <p class="sol-person__role">Milletvekili Adayı</p>
+                    <span class="sol-tag">Ankara</span>
+                </div>
+            </div>
+            <div class="sol-person">
+                <span class="sol-person__photo"><img src="../templates/solidarity/images/portrait-placeholder.svg" alt=""></span>
+                <div class="sol-person__body">
+                    <h3 class="sol-person__name">Örnek İsim</h3>
+                    <p class="sol-person__role">Muhtar Adayı</p>
+                    <span class="sol-tag">İzmir</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Şehirler (bottom-b, mor bant + çip ızgarası) -->
+    <section class="sol-section sol-section--purple">
+        <div class="sol-container">
+            <div class="sol-band">
+                <h2 class="sol-band__title">Şehrini Bul</h2>
+                <div class="sol-grid-4" style="margin-top:2.5rem;">
+                    <a class="sol-chip" href="#">İstanbul</a>
+                    <a class="sol-chip" href="#">Ankara</a>
+                    <a class="sol-chip" href="#">İzmir</a>
+                    <a class="sol-chip" href="#">Bursa</a>
+                    <a class="sol-chip" href="#">Antalya</a>
+                    <a class="sol-chip" href="#">Adana</a>
+                    <a class="sol-chip" href="#">Eskişehir</a>
+                    <a class="sol-chip" href="#">Tümü →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Haberler (main / bileşen alanı) -->
     <main class="sol-main" id="sol-main">
         <div class="sol-container">
             <div class="sol-layout">
@@ -130,23 +212,41 @@
                             <p>Yer tutucu özet metni. Kendi içeriğinizle değiştirin.</p>
                             <p class="readmore"><a href="#">Devamını oku</a></p>
                         </div>
+                        <div class="blog-item">
+                            <h3>Üçüncü makale</h3>
+                            <p class="article-info">14 Temmuz 2026 · Duyuru</p>
+                            <p>Yer tutucu özet metni. Kendi içeriğinizle değiştirin.</p>
+                            <p class="readmore"><a href="#">Devamını oku</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- 8. Büyük çağrı bandı (cta, turuncu) -->
+    <section class="sol-cta">
+        <div class="sol-container">
+            <h2>Değişim örgütlü halkla gelir</h2>
+            <p>"cta" pozisyonu: büyük eylem çağrısı bandı. Kendi çağrınızı yazın.</p>
+            <p><a class="sol-btn sol-btn--dark" href="#">Gönüllü Ol</a></p>
+        </div>
+    </section>
+
+    <!-- 9. Kayıt bandı (signup, lavanta: e-posta + posta kodu) -->
     <section class="sol-signup">
         <div class="sol-container">
             <h2>Haberdar Ol</h2>
             <p>"signup" pozisyonu: e-bülten modülünüzü buraya yayınlayın.</p>
             <form action="#" onsubmit="return false">
                 <input type="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz">
+                <input type="text" class="sol-input--small" placeholder="Posta kodu" aria-label="Posta kodu">
                 <button type="submit" class="sol-btn sol-btn--accent">Abone Ol</button>
             </form>
         </div>
     </section>
 
+    <!-- 10. Footer + yasal beyan -->
     <footer class="sol-footer">
         <div class="sol-container">
             <div class="sol-footer__grid">
@@ -207,6 +307,7 @@
             </div>
             <div class="sol-footer__legal">
                 <p>&copy; 2026 Hareket — Bu bir önizleme sayfasıdır; tüm içerik yer tutucudur.</p>
+                <p class="sol-disclaimer">Yer tutucu yasal beyan: kampanya finansmanı / sorumluluk bildirimi metninizi buraya yazın.</p>
             </div>
         </div>
     </footer>

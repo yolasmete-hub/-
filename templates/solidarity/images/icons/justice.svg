@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Justice">
+  <path d="M12 4v15M8.5 20h7M5 7h14" fill="none" stroke="#f7f1e6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M5 7 3 12.5h4L5 7Zm0 0" fill="none" stroke="#f7f1e6" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M3 12.5a2 2 0 0 0 4 0" fill="none" stroke="#f7f1e6" stroke-width="1.6"/>
+  <path d="M19 7l-2 5.5h4L19 7Zm0 0" fill="none" stroke="#f7f1e6" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M17 12.5a2 2 0 0 0 4 0" fill="none" stroke="#f7f1e6" stroke-width="1.6"/>
+</svg>
