@@ -1,0 +1,1166 @@
+/**
+ * Solidarity — an original activist-style template for Joomla 5
+ * Design language: deep violet + vivid orange on cream, heavy condensed
+ * uppercase display type, flag motif, bold bands and cards.
+ */
+
+/* ---------------------------------------------------------------------------
+ * Design tokens
+ * ------------------------------------------------------------------------ */
+:root {
+    --sol-purple-950: #1d0f33;
+    --sol-purple-900: #2a1547;
+    --sol-purple-700: #3f1f6b;
+    --sol-purple-500: #5c2f96;
+    --sol-lavender: #c9b5ec;
+    --sol-lavender-pale: #efe8fa;
+    --sol-cream: #f7f1e6;
+    --sol-cream-dark: #efe6d4;
+    --sol-white: #fffdf9;
+    --sol-ink: #181022;
+    --sol-orange: #ff5c2b;
+    --sol-orange-dark: #d94318;
+    --sol-gold: #ffc531;
+
+    --sol-font-display: 'Anton', 'Arial Narrow', 'Helvetica Neue Condensed', Impact, sans-serif;
+    --sol-font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+    --sol-container: 76rem;
+    --sol-radius: 0.375rem;
+    --sol-shadow: 0.375rem 0.375rem 0 rgba(29, 15, 51, 0.18);
+    --sol-transition: 160ms ease;
+}
+
+/* ---------------------------------------------------------------------------
+ * Base
+ * ------------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.site {
+    margin: 0;
+    font-family: var(--sol-font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--sol-ink);
+    background: var(--sol-cream);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--sol-font-display);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--sol-purple-900);
+    margin: 0 0 0.6em;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3.25rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.125rem); }
+h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+h5, h6 {
+    font-family: var(--sol-font-body);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sol-purple-700);
+    margin: 0 0 0.6em;
+}
+
+p {
+    margin: 0 0 1.1em;
+}
+
+a {
+    color: var(--sol-purple-500);
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.15em;
+    transition: color var(--sol-transition);
+}
+
+a:hover,
+a:focus {
+    color: var(--sol-orange-dark);
+}
+
+::selection {
+    background: var(--sol-gold);
+    color: var(--sol-ink);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sol-skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    padding: 0.75rem 1.25rem;
+    background: var(--sol-orange);
+    color: var(--sol-white);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 var(--sol-radius) var(--sol-radius);
+}
+
+.sol-skip-link:focus {
+    top: 0;
+    color: var(--sol-white);
+}
+
+.sol-container {
+    width: 100%;
+    max-width: var(--sol-container);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons
+ * ------------------------------------------------------------------------ */
+.sol-btn,
+.btn,
+button.validate,
+input[type="submit"],
+.sol-signup button,
+.sol-hero .btn {
+    display: inline-block;
+    padding: 0.8rem 1.7rem;
+    font-family: var(--sol-font-body);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: var(--sol-white);
+    background: var(--sol-purple-700);
+    border: 0.1875rem solid var(--sol-purple-700);
+    border-radius: var(--sol-radius);
+    cursor: pointer;
+    transition: background var(--sol-transition), color var(--sol-transition),
+        border-color var(--sol-transition), transform var(--sol-transition);
+}
+
+.sol-btn:hover,
+.sol-btn:focus,
+.btn:hover,
+.btn:focus,
+button.validate:hover,
+input[type="submit"]:hover {
+    background: var(--sol-purple-900);
+    border-color: var(--sol-purple-900);
+    color: var(--sol-white);
+    transform: translate(-0.125rem, -0.125rem);
+}
+
+.sol-btn--accent {
+    background: var(--sol-orange);
+    border-color: var(--sol-orange);
+    color: var(--sol-white);
+}
+
+.sol-btn--accent:hover,
+.sol-btn--accent:focus {
+    background: var(--sol-orange-dark);
+    border-color: var(--sol-orange-dark);
+    color: var(--sol-white);
+}
+
+.sol-btn--ghost {
+    background: transparent;
+    color: var(--sol-purple-700);
+}
+
+.sol-btn--ghost:hover,
+.sol-btn--ghost:focus {
+    background: var(--sol-purple-700);
+    color: var(--sol-white);
+}
+
+.sol-btn--light {
+    background: var(--sol-cream);
+    border-color: var(--sol-cream);
+    color: var(--sol-purple-900);
+}
+
+.sol-btn--light:hover,
+.sol-btn--light:focus {
+    background: var(--sol-gold);
+    border-color: var(--sol-gold);
+    color: var(--sol-ink);
+}
+
+/* ---------------------------------------------------------------------------
+ * Top bar
+ * ------------------------------------------------------------------------ */
+.sol-topbar {
+    background: var(--sol-purple-950);
+    color: var(--sol-lavender);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-block: 0.4rem;
+}
+
+.sol-topbar a {
+    color: var(--sol-gold);
+}
+
+.sol-topbar p {
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Header + navigation
+ * ------------------------------------------------------------------------ */
+.sol-header {
+    background: var(--sol-cream);
+    border-bottom: 0.25rem solid var(--sol-purple-900);
+    z-index: 100;
+}
+
+.sol-header--sticky {
+    position: sticky;
+    top: 0;
+}
+
+.sol-header.is-scrolled {
+    box-shadow: 0 0.375rem 1.25rem rgba(29, 15, 51, 0.16);
+}
+
+.sol-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 4.75rem;
+}
+
+.sol-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--sol-purple-900);
+}
+
+.sol-brand__logo {
+    height: 3rem;
+    width: auto;
+}
+
+.sol-brand__title {
+    display: block;
+    font-family: var(--sol-font-display);
+    font-size: 1.5rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.sol-brand__tagline {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sol-orange-dark);
+}
+
+.sol-nav {
+    margin-left: auto;
+}
+
+.sol-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.sol-nav li {
+    position: relative;
+}
+
+.sol-nav a,
+.sol-nav .nav-header,
+.sol-nav .separator {
+    display: block;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+}
+
+.sol-nav a:hover,
+.sol-nav a:focus,
+.sol-nav .active > a {
+    color: var(--sol-orange-dark);
+}
+
+.sol-nav .active > a {
+    box-shadow: inset 0 -0.25rem 0 var(--sol-orange);
+    border-radius: 0;
+}
+
+/* Dropdowns (desktop) */
+.sol-nav li > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 14rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--sol-white);
+    border: 0.1875rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+    box-shadow: var(--sol-shadow);
+    padding: 0.4rem;
+    display: none;
+    z-index: 110;
+}
+
+.sol-nav li:hover > ul,
+.sol-nav li:focus-within > ul,
+.sol-nav li.is-open > ul {
+    display: flex;
+}
+
+.sol-nav li > ul a {
+    font-size: 0.88rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+}
+
+.sol-nav li > ul li > ul {
+    top: 0;
+    left: 100%;
+}
+
+/* Submenu toggle injected by template.js — hidden on desktop (hover menus) */
+.sol-submenu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--sol-purple-900);
+    background: transparent;
+    border: 0.125rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+    cursor: pointer;
+    transition: transform var(--sol-transition), background var(--sol-transition);
+}
+
+.sol-nav li.is-open > .sol-submenu-toggle {
+    transform: rotate(180deg);
+    background: var(--sol-lavender);
+}
+
+.sol-nav__search {
+    margin-left: 0.5rem;
+}
+
+.sol-nav__search input {
+    max-width: 11rem;
+}
+
+.sol-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sol-header__cta {
+    padding: 0.65rem 1.4rem;
+}
+
+/* Burger */
+.sol-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0.5rem;
+    background: transparent;
+    border: 0.1875rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+    cursor: pointer;
+}
+
+.sol-nav-toggle__bar {
+    display: block;
+    height: 0.1875rem;
+    background: var(--sol-purple-900);
+    border-radius: 1rem;
+    transition: transform var(--sol-transition), opacity var(--sol-transition);
+}
+
+.sol-nav-toggle[aria-expanded="true"] .sol-nav-toggle__bar:nth-child(1) {
+    transform: translateY(0.49rem) rotate(45deg);
+}
+
+.sol-nav-toggle[aria-expanded="true"] .sol-nav-toggle__bar:nth-child(2) {
+    opacity: 0;
+}
+
+.sol-nav-toggle[aria-expanded="true"] .sol-nav-toggle__bar:nth-child(3) {
+    transform: translateY(-0.49rem) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------------------------
+ * Hero
+ * ------------------------------------------------------------------------ */
+.sol-hero {
+    position: relative;
+    background: var(--sol-purple-900);
+    background-image:
+        radial-gradient(ellipse 60rem 30rem at 110% -10%, rgba(92, 47, 150, 0.55), transparent 60%),
+        radial-gradient(ellipse 50rem 26rem at -10% 110%, rgba(255, 92, 43, 0.22), transparent 55%);
+    color: var(--sol-cream);
+    padding-block: clamp(3.5rem, 9vw, 7rem);
+    overflow: hidden;
+}
+
+.sol-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 0.625rem;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--sol-orange) 0 2.5rem,
+        var(--sol-gold) 2.5rem 5rem,
+        var(--sol-lavender) 5rem 7.5rem
+    );
+}
+
+.sol-hero h1,
+.sol-hero h2 {
+    color: var(--sol-cream);
+    font-size: clamp(2.75rem, 7.5vw, 5.5rem);
+    max-width: 18ch;
+}
+
+.sol-hero h1 em,
+.sol-hero h2 em,
+.sol-hero .sol-accent {
+    font-style: normal;
+    color: var(--sol-gold);
+}
+
+.sol-hero p {
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    max-width: 55ch;
+    color: var(--sol-lavender-pale);
+}
+
+.sol-hero .sol-btn,
+.sol-hero .btn {
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Ticker (scrolling marquee band)
+ * ------------------------------------------------------------------------ */
+.sol-ticker {
+    background: var(--sol-orange);
+    color: var(--sol-purple-950);
+    overflow: hidden;
+    padding-block: 0.55rem;
+    border-block: 0.1875rem solid var(--sol-purple-950);
+}
+
+.sol-ticker__track {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    width: max-content;
+    animation: sol-marquee 28s linear infinite;
+}
+
+.sol-ticker:hover .sol-ticker__track {
+    animation-play-state: paused;
+}
+
+.sol-ticker__track > * {
+    flex: none;
+    margin: 0;
+    font-family: var(--sol-font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.sol-ticker__track p {
+    margin: 0;
+    font-family: var(--sol-font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+@keyframes sol-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sol-ticker__track {
+        animation: none;
+        flex-wrap: wrap;
+        width: auto;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * Breadcrumbs
+ * ------------------------------------------------------------------------ */
+.sol-breadcrumbs {
+    background: var(--sol-cream-dark);
+    padding-block: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.sol-breadcrumbs ol,
+.sol-breadcrumbs ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Sections and layout
+ * ------------------------------------------------------------------------ */
+.sol-section {
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.sol-section--cream {
+    background: var(--sol-cream);
+}
+
+.sol-section--purple {
+    background: var(--sol-purple-900);
+    color: var(--sol-cream);
+}
+
+.sol-section--purple h1,
+.sol-section--purple h2,
+.sol-section--purple h3,
+.sol-section--purple h4 {
+    color: var(--sol-cream);
+}
+
+.sol-section--purple a {
+    color: var(--sol-gold);
+}
+
+.sol-main {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.sol-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.sol-layout--sidebar {
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+}
+
+.sol-layout__content {
+    min-width: 0;
+}
+
+.sol-main__top,
+.sol-main__bottom {
+    margin-block: 1.5rem;
+}
+
+/* Multi-module rows: any position holding several modules becomes a grid */
+.sol-section .sol-container,
+.sol-main__top,
+.sol-main__bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.sol-section .sol-container > *:only-child,
+.sol-main__top > *:only-child,
+.sol-main__bottom > *:only-child {
+    grid-column: 1 / -1;
+}
+
+/* ---------------------------------------------------------------------------
+ * Module chromes
+ * ------------------------------------------------------------------------ */
+.sol-card {
+    background: var(--sol-white);
+    border: 0.1875rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+    box-shadow: var(--sol-shadow);
+    padding: 1.5rem;
+    transition: transform var(--sol-transition), box-shadow var(--sol-transition);
+}
+
+.sol-card:hover {
+    transform: translate(-0.125rem, -0.125rem);
+    box-shadow: 0.5rem 0.5rem 0 rgba(29, 15, 51, 0.22);
+}
+
+.sol-card__title {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.25rem solid var(--sol-orange);
+    display: inline-block;
+}
+
+.sol-band {
+    padding: 0;
+}
+
+.sol-band__title {
+    color: inherit;
+    text-align: center;
+}
+
+.sol-band__title::after {
+    content: "";
+    display: block;
+    width: 4.5rem;
+    height: 0.3125rem;
+    background: var(--sol-orange);
+    margin: 0.75rem auto 0;
+}
+
+.sol-footer-module h3,
+.sol-footer-module .sol-footer-module__title {
+    font-family: var(--sol-font-body);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sol-gold);
+    margin-bottom: 0.9rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Signup band
+ * ------------------------------------------------------------------------ */
+.sol-signup {
+    background: var(--sol-lavender);
+    border-block: 0.25rem solid var(--sol-purple-900);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.sol-signup h2,
+.sol-signup h3 {
+    color: var(--sol-purple-950);
+}
+
+.sol-signup form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.sol-signup input[type="email"],
+.sol-signup input[type="text"] {
+    flex: 1 1 16rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Forms
+ * ------------------------------------------------------------------------ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    font-family: var(--sol-font-body);
+    font-size: 1rem;
+    color: var(--sol-ink);
+    background: var(--sol-white);
+    border: 0.1875rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0.1875rem solid var(--sol-orange);
+    outline-offset: 0.125rem;
+}
+
+/* ---------------------------------------------------------------------------
+ * Footer
+ * ------------------------------------------------------------------------ */
+.sol-footer {
+    background: var(--sol-purple-950);
+    color: var(--sol-lavender-pale);
+    padding-block: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+    border-top: 0.625rem solid var(--sol-orange);
+}
+
+.sol-footer a {
+    color: var(--sol-lavender);
+}
+
+.sol-footer a:hover,
+.sol-footer a:focus {
+    color: var(--sol-gold);
+}
+
+.sol-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sol-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sol-footer ul li {
+    margin-bottom: 0.45rem;
+}
+
+.sol-footer ul a {
+    text-decoration: none;
+}
+
+.sol-footer ul a:hover {
+    text-decoration: underline;
+}
+
+.sol-footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid rgba(201, 181, 236, 0.25);
+}
+
+.sol-footer__legal {
+    border-top: 1px solid rgba(201, 181, 236, 0.25);
+    padding-top: 1.25rem;
+    font-size: 0.82rem;
+    text-align: center;
+    color: var(--sol-lavender);
+}
+
+.sol-footer__legal p {
+    margin: 0.25rem 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Back to top
+ * ------------------------------------------------------------------------ */
+.sol-back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 150;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--sol-white);
+    background: var(--sol-orange);
+    border: 0.1875rem solid var(--sol-purple-950);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--sol-shadow);
+    transition: transform var(--sol-transition), background var(--sol-transition);
+}
+
+.sol-back-to-top:hover {
+    background: var(--sol-orange-dark);
+    transform: translateY(-0.25rem);
+}
+
+/* ---------------------------------------------------------------------------
+ * Joomla component styling
+ * ------------------------------------------------------------------------ */
+.item-page,
+.blog,
+.category-list,
+.com-content-article {
+    background: transparent;
+}
+
+.page-header h1,
+.page-header h2 {
+    border-bottom: 0.3125rem solid var(--sol-orange);
+    display: inline-block;
+    padding-bottom: 0.35rem;
+}
+
+.article-info,
+.blog-item .article-info {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--sol-purple-500);
+}
+
+.blog-items,
+.com-content-category-blog__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+    gap: 1.5rem;
+}
+
+.blog-item,
+.com-content-category-blog__item {
+    background: var(--sol-white);
+    border: 0.1875rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+    box-shadow: var(--sol-shadow);
+    padding: 1.5rem;
+}
+
+.readmore a,
+a.readmore {
+    display: inline-block;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--sol-purple-700);
+    border: 0.1875rem solid var(--sol-purple-700);
+    border-radius: var(--sol-radius);
+    transition: background var(--sol-transition), color var(--sol-transition);
+}
+
+.readmore a:hover,
+a.readmore:hover {
+    background: var(--sol-purple-700);
+    color: var(--sol-white);
+}
+
+/* Pagination */
+.pagination ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination a,
+.pagination .page-link,
+.pagination span {
+    display: inline-block;
+    min-width: 2.4rem;
+    padding: 0.45rem 0.7rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--sol-purple-900);
+    background: var(--sol-white);
+    border: 0.125rem solid var(--sol-purple-900);
+    border-radius: var(--sol-radius);
+}
+
+.pagination .active .page-link,
+.pagination .active span {
+    background: var(--sol-purple-700);
+    color: var(--sol-white);
+}
+
+/* System messages */
+#system-message-container joomla-alert,
+.alert {
+    border-radius: var(--sol-radius);
+    border-width: 0.1875rem;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+th, td {
+    padding: 0.65rem 0.8rem;
+    text-align: left;
+    border-bottom: 0.125rem solid var(--sol-cream-dark);
+}
+
+th {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sol-purple-700);
+    border-bottom: 0.1875rem solid var(--sol-purple-900);
+}
+
+/* ---------------------------------------------------------------------------
+ * Utilities (usable inside Custom HTML modules)
+ * ------------------------------------------------------------------------ */
+.sol-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sol-orange-dark);
+    margin-bottom: 0.75rem;
+}
+
+.sol-section--purple .sol-eyebrow,
+.sol-hero .sol-eyebrow {
+    color: var(--sol-gold);
+}
+
+.sol-stat {
+    font-family: var(--sol-font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    color: var(--sol-orange);
+    display: block;
+}
+
+.sol-grid-2,
+.sol-grid-3,
+.sol-grid-4 {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.sol-grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.sol-grid-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+.sol-grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+
+.sol-photo-duotone {
+    position: relative;
+    display: block;
+    border-radius: var(--sol-radius);
+    overflow: hidden;
+    border: 0.1875rem solid var(--sol-purple-950);
+}
+
+.sol-photo-duotone img {
+    display: block;
+    width: 100%;
+    filter: grayscale(1) contrast(1.05);
+}
+
+.sol-photo-duotone::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(63, 31, 107, 0.55), rgba(255, 92, 43, 0.35));
+    mix-blend-mode: multiply;
+}
+
+.sol-flag {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+}
+
+/* ---------------------------------------------------------------------------
+ * Responsive: tablet & mobile
+ * ------------------------------------------------------------------------ */
+@media (max-width: 61.99rem) {
+    .sol-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        background: var(--sol-cream);
+        border-bottom: 0.25rem solid var(--sol-purple-900);
+        box-shadow: 0 1rem 1.5rem rgba(29, 15, 51, 0.18);
+        padding: 1rem 1.25rem 1.5rem;
+        max-height: calc(100vh - 5rem);
+        overflow-y: auto;
+    }
+
+    .sol-header {
+        position: relative;
+    }
+
+    .sol-header--sticky {
+        position: sticky;
+    }
+
+    .sol-nav.is-open {
+        display: block;
+    }
+
+    .sol-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .sol-nav li {
+        position: relative;
+    }
+
+    .sol-nav a {
+        padding: 0.8rem 3rem 0.8rem 0.5rem;
+        border-bottom: 1px solid var(--sol-cream-dark);
+        border-radius: 0;
+    }
+
+    .sol-submenu-toggle {
+        display: inline-flex;
+        position: absolute;
+        right: 0.25rem;
+        top: 0.5rem;
+        z-index: 5;
+    }
+
+    .sol-nav li > ul {
+        position: static;
+        display: none;
+        border: 0;
+        border-left: 0.25rem solid var(--sol-lavender);
+        box-shadow: none;
+        background: transparent;
+        padding: 0 0 0 0.9rem;
+        margin: 0;
+    }
+
+    .sol-nav li.is-open > ul {
+        display: block;
+    }
+
+    .sol-nav li:hover > ul:not(.is-open) {
+        display: none;
+    }
+
+    .sol-nav li.is-open > ul {
+        display: flex;
+    }
+
+    .sol-nav-toggle {
+        display: flex;
+    }
+
+    .sol-header__cta {
+        display: none;
+    }
+
+    .sol-nav__search {
+        margin: 0.75rem 0 0;
+    }
+
+    .sol-nav__search input {
+        max-width: none;
+    }
+
+    .sol-layout--sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 40rem) {
+    body.site {
+        font-size: 1rem;
+    }
+
+    .sol-container {
+        padding-inline: 1rem;
+    }
+
+    .sol-brand__logo {
+        height: 2.4rem;
+    }
+
+    .sol-brand__title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * Print
+ * ------------------------------------------------------------------------ */
+@media print {
+    .sol-header,
+    .sol-footer,
+    .sol-ticker,
+    .sol-signup,
+    .sol-back-to-top,
+    .sol-topbar {
+        display: none !important;
+    }
+
+    body.site {
+        background: #fff;
+        color: #000;
+    }
+}
