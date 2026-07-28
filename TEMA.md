@@ -67,19 +67,41 @@ footer tanıtım metni.
    (veya `jos_template_styles` tablosunda `home=1`).
 3. Ana menü modülünü `menu` pozisyonuna taşı.
 
+## Yönetim rehberi — hangi alan nereden düzenlenir?
+
+Yönetici paneli: `http://127.0.0.1:8080/administrator/` (kullanıcı `admin`).
+Her ana sayfa bölgesi Joomla'nın kendi araçlarıyla yönetilir:
+
+| Alan | Nereden düzenlenir | Nasıl çalışır |
+|---|---|---|
+| **Üst menü** | Menus → **Main Menu** (öğeler) + System → Site Modules → **Main Menu** | `menu` pozisyonundaki menü modülü; öğe ekle/sil/sırala → header'a yansır |
+| **Manşet** | System → Site Modules → **Manşet (Hero)** | `hero` pozisyonunda özel HTML modülü; başlık/metin/butonlar burada (`<strong>` = siyah vurgu) |
+| **Get Active** | Menus → **Get Active** (öğeler) + Site Modules → **Get Active** | `below-top` pozisyonu, manşetin yanındaki mor kutu; her öğe bir sayfaya gider |
+| **Dava kartları** | System → Site Modules → **Our fights** | `top-a` pozisyonunda özel HTML; kart zeminleri otomatik sarı/siyah/turuncu döner |
+| **Latest** | Content → Categories → **Latest** kategorisine makale ekle | `main-top` pozisyonundaki **Latest News** modülü (mod_articles, `wfpcards` yerleşimi) bu kategorideki son 3 yazıyı otomatik çeker; sayı/sıralama modül ayarından |
+| **Siyah bant** | System → Site Modules → **Feature (Siyah Bant)** | `main-bottom` pozisyonunda özel HTML (`wfp-feature-sub` + `h2` + `p` + linkler) |
+| **Contribute** | System → Site Modules → **Contribute** | `cta` pozisyonundaki turuncu bant; sabit özel HTML — metni burada değiştirirsin |
+| **Footer büyük menü** | Menus → **Footer Menu** | `footer-a` pozisyonundaki menü modülü |
+| **Footer küçük menü** | Menus → **Footer Legal** | `footer-b` pozisyonu (Privacy policy, Contact) |
+| **Footer iletişim** | System → Site Modules → **Footer Contact** | `footer-c` pozisyonunda özel HTML |
+| **Disclaimer + Paid for** | System → Site Modules → **Footer Disclaimer** | `copyright` pozisyonu; `wfp-paid-for` sınıflı div çerçeveli kutuyu üretir |
+| **Sosyal ikonlar, Donate/Join butonları, slogan** | System → Site Template Styles → **WFP - Default** → Advanced | Tema parametreleri |
+
+Get Active, Latest ve Siyah Bant modülleri yalnızca ana sayfaya atanmıştır
+(Menu Assignment: Home). Footer modülleri tüm sayfalarda görünür.
+
 ## Demo içerik
 
 `docs/wfp-demo/` altında:
 
-- `seed.php` — makaleler (3 haber + Hakkımızda + Harekete Geç) ve menü
+- `seed.php` — makaleler (3 haber + Hakkımızda + Harekete Geç) ve ana menü
   öğelerini oluşturur. Joomla kökünden çalıştırılır: `php seed.php`
-- `seed_modules.php` — hero, dava kartları (6 adet), bülten CTA bandı ve
-  üç footer modülünü oluşturur.
+- `seed_modules.php` — hero, dava kartları (6 adet), CTA bandı modüllerini oluşturur.
+- `seed_structure.php` — yönetilebilir bölge yapısını kurar: Latest
+  kategorisi, Get Active / Footer Menu / Footer Legal menüleri ve öğeleri,
+  Latest News (mod_articles), Feature, footer modülleri.
 - `joomla_db.sql` — bu demonun eksiksiz veritabanı dökümü (test ortamı;
   admin parolası KURULUM.md'dekiyle aynıdır).
-
-Hero, kartlar ve CTA modülleri yalnızca ana sayfaya atanmıştır
-(`jos_modules_menu.menuid=101`).
 
 ## Doğrulama görüntüleri
 

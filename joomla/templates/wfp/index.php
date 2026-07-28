@@ -4,12 +4,24 @@
  * @package     wfp
  * @copyright   (C) 2026 Mete Yolaş
  * @license     GNU General Public License version 2 or later
+ *
+ * Yönetilebilir bölgeler (Joomla yönetiminden düzenlenir):
+ *  - Üst menü        : Menus » Main Menu  +  Site Modules » "Main Menu" (pozisyon: menu)
+ *  - Manşet          : Site Modules » "Manşet (Hero)" (pozisyon: hero)
+ *  - Get Active      : Menus » Get Active  +  Site Modules » "Get Active" (pozisyon: below-top)
+ *  - Dava kartları   : Site Modules » "Our fights" (pozisyon: top-a)
+ *  - Latest          : Site Modules » "Latest News" (pozisyon: main-top, kaynak: "Latest" kategorisi)
+ *  - Siyah bant      : Site Modules » "Feature (Siyah Bant)" (pozisyon: main-bottom)
+ *  - Contribute      : Site Modules » "Contribute" (pozisyon: cta)
+ *  - Footer menü     : Menus » Footer Menu  +  Site Modules » "Footer Menu" (pozisyon: footer-a)
+ *  - Footer küçük menü: Menus » Footer Legal  +  Site Modules » "Footer Legal" (pozisyon: footer-b)
+ *  - Footer iletişim : Site Modules » "Footer Contact" (pozisyon: footer-c)
+ *  - Disclaimer/PaidFor: Site Modules » "Footer Disclaimer" (pozisyon: copyright)
  */
 
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
@@ -27,7 +39,6 @@ $donateUrl   = htmlspecialchars((string) $this->params->get('donateUrl', '#'), E
 $donateLabel = htmlspecialchars((string) $this->params->get('donateLabel', 'Donate'), ENT_QUOTES, 'UTF-8');
 $joinUrl     = htmlspecialchars((string) $this->params->get('joinUrl', '#'), ENT_QUOTES, 'UTF-8');
 $joinLabel   = htmlspecialchars((string) $this->params->get('joinLabel', 'Join us'), ENT_QUOTES, 'UTF-8');
-$footerAbout = (string) $this->params->get('footerAbout', '');
 
 $socials = array_filter([
     'twitter'   => (string) $this->params->get('socialTwitter', ''),
@@ -50,11 +61,11 @@ $wa->registerAndUseScript('template.wfp', 'templates/' . $this->template . '/js/
 // Favicon
 $this->addHeadLink(Uri::root(true) . '/templates/' . $this->template . '/images/favicon.svg', 'icon', 'rel', ['type' => 'image/svg+xml']);
 
-// Viewport + generator
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
-$hasSidebar = $this->countModules('sidebar-right', true);
-$pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
+$hasSidebar   = $this->countModules('sidebar-right', true);
+$hasGetActive = $this->countModules('below-top', true);
+$pageClass    = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -74,6 +85,7 @@ $pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 		</div>
 	<?php endif; ?>
 
+	<!-- ÜST MENÜ — Menus » Main Menu / Site Modules » Main Menu (pozisyon: menu) -->
 	<header class="wfp-header">
 		<div class="wfp-container wfp-header-inner">
 			<a class="wfp-brand" href="<?php echo Route::_('index.php'); ?>" aria-label="<?php echo $sitename; ?>">
@@ -105,22 +117,23 @@ $pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 		</div>
 	</header>
 
-	<?php if ($this->countModules('below-top', true)) : ?>
-		<div class="wfp-below-top">
-			<div class="wfp-container">
-				<jdoc:include type="modules" name="below-top" style="none" />
-			</div>
-		</div>
-	<?php endif; ?>
-
-	<?php if ($this->countModules('hero', true)) : ?>
+	<!-- MANŞET + GET ACTIVE — Site Modules » "Manşet (Hero)" (hero) ve "Get Active" (below-top) -->
+	<?php if ($this->countModules('hero', true) || $hasGetActive) : ?>
 		<section class="wfp-hero">
-			<div class="wfp-container">
-				<jdoc:include type="modules" name="hero" style="none" />
+			<div class="wfp-container wfp-hero-grid">
+				<div class="wfp-hero-content">
+					<jdoc:include type="modules" name="hero" style="none" />
+				</div>
+				<?php if ($hasGetActive) : ?>
+					<aside class="wfp-getactive-slot">
+						<jdoc:include type="modules" name="below-top" style="wfpgetactive" />
+					</aside>
+				<?php endif; ?>
 			</div>
 		</section>
 	<?php endif; ?>
 
+	<!-- DAVA KARTLARI — Site Modules » "Our fights" (top-a) -->
 	<?php if ($this->countModules('top-a', true)) : ?>
 		<section class="wfp-section wfp-section-topa">
 			<div class="wfp-container">
@@ -145,6 +158,7 @@ $pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 		</div>
 	<?php endif; ?>
 
+	<!-- LATEST — Site Modules » "Latest News" (main-top, kaynak: Latest kategorisi) -->
 	<main id="wfp-main" class="wfp-main">
 		<div class="wfp-container">
 			<jdoc:include type="modules" name="main-top" style="wfpsection" />
@@ -159,10 +173,19 @@ $pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 					</aside>
 				<?php endif; ?>
 			</div>
-			<jdoc:include type="modules" name="main-bottom" style="wfpsection" />
 		</div>
 	</main>
 
+	<!-- SİYAH BANT — Site Modules » "Feature (Siyah Bant)" (main-bottom) -->
+	<?php if ($this->countModules('main-bottom', true)) : ?>
+		<section class="wfp-feature-band">
+			<div class="wfp-container">
+				<jdoc:include type="modules" name="main-bottom" style="none" />
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<!-- CONTRIBUTE — Site Modules » "Contribute" (cta) -->
 	<?php if ($this->countModules('cta', true)) : ?>
 		<section class="wfp-cta">
 			<div class="wfp-container">
@@ -171,45 +194,57 @@ $pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 		</section>
 	<?php endif; ?>
 
+	<!-- FOOTER — Menus » Footer Menu + Footer Legal; Site Modules » footer-a/b/c + copyright -->
 	<footer class="wfp-footer">
 		<div class="wfp-container">
-			<div class="wfp-footer-grid">
-				<div class="wfp-footer-brand">
-					<a class="wfp-brand wfp-brand-footer" href="<?php echo Route::_('index.php'); ?>">
-						<span class="wfp-brand-mark" aria-hidden="true">
-							<svg viewBox="0 0 44 44" role="img"><rect x="6" y="4" width="4" height="38" rx="1.4" fill="currentColor"/><path d="M12 6h26l-5.4 6.4L38 19H12V6Z" fill="var(--wfp-accent)"/></svg>
-						</span>
-						<span class="wfp-brand-name"><?php echo $sitename; ?></span>
-					</a>
-					<?php if ($footerAbout !== '') : ?>
-						<p class="wfp-footer-about"><?php echo $footerAbout; ?></p>
-					<?php endif; ?>
-					<?php if ($socials) : ?>
-						<ul class="wfp-social">
-							<?php foreach ($socials as $network => $url) : ?>
-								<li>
-									<a href="<?php echo htmlspecialchars($url, ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo ucfirst($network); ?>" rel="noopener" target="_blank">
-										<?php echo $socialIcons[$network]; ?>
-									</a>
-								</li>
-							<?php endforeach; ?>
-						</ul>
-					<?php endif; ?>
-				</div>
-				<?php foreach (['footer-a', 'footer-b', 'footer-c'] as $fpos) : ?>
-					<?php if ($this->countModules($fpos, true)) : ?>
-						<div class="wfp-footer-col">
-							<jdoc:include type="modules" name="<?php echo $fpos; ?>" style="wfpfooter" />
-						</div>
-					<?php endif; ?>
-				<?php endforeach; ?>
+			<div class="wfp-footer-hed">
+				<a class="wfp-brand wfp-brand-footer" href="<?php echo Route::_('index.php'); ?>" aria-label="<?php echo $sitename; ?>">
+					<span class="wfp-brand-mark" aria-hidden="true">
+						<svg viewBox="0 0 44 44" role="img"><rect x="6" y="4" width="4" height="38" rx="1.4" fill="currentColor"/><path d="M12 6h26l-5.4 6.4L38 19H12V6Z" fill="var(--wfp-accent)"/></svg>
+					</span>
+					<span class="wfp-brand-name"><?php echo $sitename; ?></span>
+				</a>
 			</div>
-			<div class="wfp-footer-bottom">
-				<?php if ($this->countModules('copyright', true)) : ?>
-					<jdoc:include type="modules" name="copyright" style="none" />
-				<?php else : ?>
-					<p>&copy; <?php echo date('Y') . ' ' . $sitename; ?></p>
+
+			<?php if ($this->countModules('footer-a', true)) : ?>
+				<nav class="wfp-ftr-nav" aria-label="Footer">
+					<jdoc:include type="modules" name="footer-a" style="none" />
+				</nav>
+			<?php endif; ?>
+
+			<div class="wfp-ftr-secondary">
+				<?php if ($this->countModules('footer-b', true)) : ?>
+					<div class="wfp-ftr-tertnav">
+						<jdoc:include type="modules" name="footer-b" style="none" />
+					</div>
 				<?php endif; ?>
+				<?php if ($socials) : ?>
+					<ul class="wfp-social">
+						<?php foreach ($socials as $network => $url) : ?>
+							<li>
+								<a href="<?php echo htmlspecialchars($url, ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo ucfirst($network); ?>" rel="noopener" target="_blank">
+									<?php echo $socialIcons[$network]; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+			</div>
+
+			<?php if ($this->countModules('footer-c', true)) : ?>
+				<div class="wfp-ftr-contact">
+					<jdoc:include type="modules" name="footer-c" style="none" />
+				</div>
+			<?php endif; ?>
+
+			<?php if ($this->countModules('copyright', true)) : ?>
+				<div class="wfp-ftr-disclaimer">
+					<jdoc:include type="modules" name="copyright" style="none" />
+				</div>
+			<?php endif; ?>
+
+			<div class="wfp-footer-bottom">
+				<p>&copy; <?php echo date('Y') . ' ' . $sitename; ?></p>
 			</div>
 		</div>
 	</footer>
