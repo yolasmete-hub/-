@@ -194,23 +194,27 @@ $pageClass    = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : 
 		</section>
 	<?php endif; ?>
 
-	<!-- FOOTER — Menus » Footer Menu + Footer Legal; Site Modules » footer-a/b/c + copyright -->
+	<!-- FOOTER — gerçek .ftr yapısı:
+	     footer-a: büyük menü (Menus » Footer Menu)
+	     footer-b: küçük büyük-harf menü (Menus » Tertiary Nav)
+	     footer-d: alt küçük menü (Menus » Footer Legal)
+	     footer-c: posta adresi + "Made with" (Site Modules » Footer Contact)
+	     copyright: disclaimer + Paid For (Site Modules » Footer Disclaimer) -->
 	<footer class="wfp-footer">
 		<div class="wfp-container">
-			<div class="wfp-footer-hed">
+			<div class="wfp-ftr-main">
 				<a class="wfp-brand wfp-brand-footer" href="<?php echo Route::_('index.php'); ?>" aria-label="<?php echo $sitename; ?>">
 					<span class="wfp-brand-mark" aria-hidden="true">
 						<svg viewBox="0 0 44 44" role="img"><rect x="6" y="4" width="4" height="38" rx="1.4" fill="currentColor"/><path d="M12 6h26l-5.4 6.4L38 19H12V6Z" fill="var(--wfp-accent)"/></svg>
 					</span>
 					<span class="wfp-brand-name"><?php echo $sitename; ?></span>
 				</a>
+				<?php if ($this->countModules('footer-a', true)) : ?>
+					<nav class="wfp-ftr-nav" aria-label="Footer">
+						<jdoc:include type="modules" name="footer-a" style="none" />
+					</nav>
+				<?php endif; ?>
 			</div>
-
-			<?php if ($this->countModules('footer-a', true)) : ?>
-				<nav class="wfp-ftr-nav" aria-label="Footer">
-					<jdoc:include type="modules" name="footer-a" style="none" />
-				</nav>
-			<?php endif; ?>
 
 			<div class="wfp-ftr-secondary">
 				<?php if ($this->countModules('footer-b', true)) : ?>
@@ -231,11 +235,18 @@ $pageClass    = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : 
 				<?php endif; ?>
 			</div>
 
-			<?php if ($this->countModules('footer-c', true)) : ?>
-				<div class="wfp-ftr-contact">
-					<jdoc:include type="modules" name="footer-c" style="none" />
-				</div>
-			<?php endif; ?>
+			<div class="wfp-ftr-low">
+				<?php if ($this->countModules('footer-d', true)) : ?>
+					<div class="wfp-ftr-smnav">
+						<jdoc:include type="modules" name="footer-d" style="none" />
+					</div>
+				<?php endif; ?>
+				<?php if ($this->countModules('footer-c', true)) : ?>
+					<div class="wfp-ftr-contact">
+						<jdoc:include type="modules" name="footer-c" style="none" />
+					</div>
+				<?php endif; ?>
+			</div>
 
 			<?php if ($this->countModules('copyright', true)) : ?>
 				<div class="wfp-ftr-disclaimer">

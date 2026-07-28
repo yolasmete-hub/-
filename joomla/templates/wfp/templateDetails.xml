@@ -40,6 +40,7 @@
 		<position>footer-a</position>
 		<position>footer-b</position>
 		<position>footer-c</position>
+		<position>footer-d</position>
 		<position>copyright</position>
 		<position>debug</position>
 	</positions>

@@ -195,7 +195,7 @@ CREATE TABLE `jos_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,107 +205,111 @@ CREATE TABLE `jos_assets` (
 LOCK TABLES `jos_assets` WRITE;
 /*!40000 ALTER TABLE `jos_assets` DISABLE KEYS */;
 INSERT INTO `jos_assets` VALUES
-(1,0,0,201,0,'root.1','Root Asset','{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.api\":{\"8\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
+(1,0,0,209,0,'root.1','Root Asset','{\"core.login.site\":{\"6\":1,\"2\":1},\"core.login.admin\":{\"6\":1},\"core.login.api\":{\"8\":1},\"core.login.offline\":{\"6\":1},\"core.admin\":{\"8\":1},\"core.manage\":{\"7\":1},\"core.create\":{\"6\":1,\"3\":1},\"core.delete\":{\"6\":1},\"core.edit\":{\"6\":1,\"4\":1},\"core.edit.state\":{\"6\":1,\"5\":1},\"core.edit.own\":{\"6\":1,\"3\":1}}'),
 (2,1,1,2,1,'com_admin','com_admin','{}'),
 (3,1,3,6,1,'com_banners','com_banners','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
 (4,1,7,8,1,'com_cache','com_cache','{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
 (5,1,9,10,1,'com_checkin','com_checkin','{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
 (6,1,11,12,1,'com_config','com_config','{}'),
 (7,1,13,16,1,'com_contact','com_contact','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(8,1,17,56,1,'com_content','com_content','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.edit\":{\"4\":1},\"core.edit.state\":{\"5\":1},\"core.execute.transition\":{\"6\":1,\"5\":1}}'),
-(9,1,57,58,1,'com_cpanel','com_cpanel','{}'),
-(10,1,59,60,1,'com_installer','com_installer','{\"core.manage\":{\"7\":0},\"core.delete\":{\"7\":0},\"core.edit.state\":{\"7\":0}}'),
-(11,1,61,64,1,'com_languages','com_languages','{\"core.admin\":{\"7\":1}}'),
-(12,11,62,63,2,'com_languages.language.1','English (en-GB)','{}'),
-(13,1,65,66,1,'com_login','com_login','{}'),
-(14,1,67,68,1,'com_mails','com_mails','{}'),
-(15,1,69,70,1,'com_media','com_media','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":{\"5\":1}}'),
-(16,1,71,74,1,'com_menus','com_menus','{\"core.admin\":{\"7\":1}}'),
-(17,1,75,76,1,'com_messages','com_messages','{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
-(18,1,77,150,1,'com_modules','com_modules','{\"core.admin\":{\"7\":1}}'),
-(19,1,151,154,1,'com_newsfeeds','com_newsfeeds','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(20,1,155,156,1,'com_plugins','com_plugins','{\"core.admin\":{\"7\":1}}'),
-(21,1,157,158,1,'com_redirect','com_redirect','{\"core.admin\":{\"7\":1}}'),
-(23,1,159,160,1,'com_templates','com_templates','{\"core.admin\":{\"7\":1}}'),
-(24,1,165,168,1,'com_users','com_users','{\"core.admin\":{\"7\":1}}'),
-(26,1,169,170,1,'com_wrapper','com_wrapper','{}'),
-(27,8,18,35,2,'com_content.category.2','Uncategorised','{}'),
+(8,1,17,64,1,'com_content','com_content','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.edit\":{\"4\":1},\"core.edit.state\":{\"5\":1},\"core.execute.transition\":{\"6\":1,\"5\":1}}'),
+(9,1,65,66,1,'com_cpanel','com_cpanel','{}'),
+(10,1,67,68,1,'com_installer','com_installer','{\"core.manage\":{\"7\":0},\"core.delete\":{\"7\":0},\"core.edit.state\":{\"7\":0}}'),
+(11,1,69,72,1,'com_languages','com_languages','{\"core.admin\":{\"7\":1}}'),
+(12,11,70,71,2,'com_languages.language.1','English (en-GB)','{}'),
+(13,1,73,74,1,'com_login','com_login','{}'),
+(14,1,75,76,1,'com_mails','com_mails','{}'),
+(15,1,77,78,1,'com_media','com_media','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1},\"core.create\":{\"3\":1},\"core.delete\":{\"5\":1}}'),
+(16,1,79,82,1,'com_menus','com_menus','{\"core.admin\":{\"7\":1}}'),
+(17,1,83,84,1,'com_messages','com_messages','{\"core.admin\":{\"7\":1},\"core.manage\":{\"7\":1}}'),
+(18,1,85,158,1,'com_modules','com_modules','{\"core.admin\":{\"7\":1}}'),
+(19,1,159,162,1,'com_newsfeeds','com_newsfeeds','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(20,1,163,164,1,'com_plugins','com_plugins','{\"core.admin\":{\"7\":1}}'),
+(21,1,165,166,1,'com_redirect','com_redirect','{\"core.admin\":{\"7\":1}}'),
+(23,1,167,168,1,'com_templates','com_templates','{\"core.admin\":{\"7\":1}}'),
+(24,1,173,176,1,'com_users','com_users','{\"core.admin\":{\"7\":1}}'),
+(26,1,177,178,1,'com_wrapper','com_wrapper','{}'),
+(27,8,18,43,2,'com_content.category.2','Uncategorised','{}'),
 (28,3,4,5,2,'com_banners.category.3','Uncategorised','{}'),
 (29,7,14,15,2,'com_contact.category.4','Uncategorised','{}'),
-(30,19,152,153,2,'com_newsfeeds.category.5','Uncategorised','{}'),
-(32,24,166,167,2,'com_users.category.7','Uncategorised','{}'),
-(33,1,171,172,1,'com_finder','com_finder','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
-(34,1,173,174,1,'com_joomlaupdate','com_joomlaupdate','{}'),
-(35,1,175,176,1,'com_tags','com_tags','{}'),
-(36,1,177,178,1,'com_contenthistory','com_contenthistory','{}'),
-(37,1,179,180,1,'com_ajax','com_ajax','{}'),
-(38,1,181,182,1,'com_postinstall','com_postinstall','{}'),
-(39,18,78,79,2,'com_modules.module.1','Main Menu','{}'),
-(40,18,80,81,2,'com_modules.module.2','Login','{}'),
-(41,18,82,83,2,'com_modules.module.3','Popular Articles','{}'),
-(42,18,84,85,2,'com_modules.module.4','Recently Added Articles','{}'),
-(43,18,86,87,2,'com_modules.module.8','Toolbar','{}'),
-(44,18,88,89,2,'com_modules.module.9','Notifications','{}'),
-(45,18,90,91,2,'com_modules.module.10','Logged-in Users','{}'),
-(46,18,92,93,2,'com_modules.module.12','Admin Menu','{}'),
-(49,18,98,99,2,'com_modules.module.15','Title','{}'),
-(50,18,100,101,2,'com_modules.module.16','Login Form','{}'),
-(51,18,102,103,2,'com_modules.module.17','Breadcrumbs','{}'),
-(52,18,104,105,2,'com_modules.module.79','Multilanguage status','{}'),
-(53,18,108,109,2,'com_modules.module.86','Joomla Version','{}'),
-(54,16,72,73,2,'com_menus.menu.1','Main Menu','{}'),
-(55,18,112,113,2,'com_modules.module.87','Sample Data','{}'),
-(56,8,36,53,2,'com_content.workflow.1','COM_WORKFLOW_BASIC_WORKFLOW','{}'),
-(57,56,37,38,3,'com_content.stage.1','COM_WORKFLOW_BASIC_STAGE','{}'),
-(58,56,39,40,3,'com_content.transition.1','UNPUBLISH','{}'),
-(59,56,41,42,3,'com_content.transition.2','PUBLISH','{}'),
-(60,56,43,44,3,'com_content.transition.3','TRASH','{}'),
-(61,56,45,46,3,'com_content.transition.4','ARCHIVE','{}'),
-(62,56,47,48,3,'com_content.transition.5','FEATURE','{}'),
-(63,56,49,50,3,'com_content.transition.6','UNFEATURE','{}'),
-(64,56,51,52,3,'com_content.transition.7','PUBLISH_AND_FEATURE','{}'),
-(65,1,161,162,1,'com_privacy','com_privacy','{}'),
-(66,1,163,164,1,'com_actionlogs','com_actionlogs','{}'),
-(67,18,94,95,2,'com_modules.module.88','Latest Actions','{}'),
-(68,18,96,97,2,'com_modules.module.89','Privacy Dashboard','{}'),
-(70,18,106,107,2,'com_modules.module.103','Site','{}'),
-(71,18,110,111,2,'com_modules.module.104','System','{}'),
-(72,18,114,115,2,'com_modules.module.91','System Dashboard','{}'),
-(73,18,116,117,2,'com_modules.module.92','Content Dashboard','{}'),
-(74,18,118,119,2,'com_modules.module.93','Menus Dashboard','{}'),
-(75,18,120,121,2,'com_modules.module.94','Components Dashboard','{}'),
-(76,18,122,123,2,'com_modules.module.95','Users Dashboard','{}'),
-(77,18,124,125,2,'com_modules.module.99','Frontend Link','{}'),
-(78,18,126,127,2,'com_modules.module.100','Messages','{}'),
-(79,18,128,129,2,'com_modules.module.101','Post Install Messages','{}'),
-(80,18,130,131,2,'com_modules.module.102','User Status','{}'),
-(82,18,132,133,2,'com_modules.module.105','3rd Party','{}'),
-(83,18,134,135,2,'com_modules.module.106','Help Dashboard','{}'),
-(84,18,136,137,2,'com_modules.module.107','Privacy Requests','{}'),
-(85,18,138,139,2,'com_modules.module.108','Privacy Status','{}'),
-(86,18,140,141,2,'com_modules.module.96','Popular Articles','{}'),
-(87,18,142,143,2,'com_modules.module.97','Recently Added Articles','{}'),
-(88,18,144,145,2,'com_modules.module.98','Logged-in Users','{}'),
-(89,18,146,147,2,'com_modules.module.90','Login Support','{}'),
-(90,1,183,190,1,'com_scheduler','com_scheduler','{}'),
-(91,1,191,192,1,'com_associations','com_associations','{}'),
-(92,1,193,194,1,'com_categories','com_categories','{}'),
-(93,1,195,196,1,'com_fields','com_fields','{}'),
-(94,1,197,198,1,'com_workflow','com_workflow','{}'),
-(95,1,199,200,1,'com_guidedtours','com_guidedtours','{}'),
-(96,18,148,149,2,'com_modules.module.109','Guided Tours','{}'),
-(97,90,184,185,2,'com_scheduler.task.1','Rotate Logs','{}'),
-(98,90,186,187,2,'com_scheduler.task.2','Session GC','{}'),
-(99,90,188,189,2,'com_scheduler.task.3','Update Notification','{}'),
+(30,19,160,161,2,'com_newsfeeds.category.5','Uncategorised','{}'),
+(32,24,174,175,2,'com_users.category.7','Uncategorised','{}'),
+(33,1,179,180,1,'com_finder','com_finder','{\"core.admin\":{\"7\":1},\"core.manage\":{\"6\":1}}'),
+(34,1,181,182,1,'com_joomlaupdate','com_joomlaupdate','{}'),
+(35,1,183,184,1,'com_tags','com_tags','{}'),
+(36,1,185,186,1,'com_contenthistory','com_contenthistory','{}'),
+(37,1,187,188,1,'com_ajax','com_ajax','{}'),
+(38,1,189,190,1,'com_postinstall','com_postinstall','{}'),
+(39,18,86,87,2,'com_modules.module.1','Main Menu','{}'),
+(40,18,88,89,2,'com_modules.module.2','Login','{}'),
+(41,18,90,91,2,'com_modules.module.3','Popular Articles','{}'),
+(42,18,92,93,2,'com_modules.module.4','Recently Added Articles','{}'),
+(43,18,94,95,2,'com_modules.module.8','Toolbar','{}'),
+(44,18,96,97,2,'com_modules.module.9','Notifications','{}'),
+(45,18,98,99,2,'com_modules.module.10','Logged-in Users','{}'),
+(46,18,100,101,2,'com_modules.module.12','Admin Menu','{}'),
+(49,18,106,107,2,'com_modules.module.15','Title','{}'),
+(50,18,108,109,2,'com_modules.module.16','Login Form','{}'),
+(51,18,110,111,2,'com_modules.module.17','Breadcrumbs','{}'),
+(52,18,112,113,2,'com_modules.module.79','Multilanguage status','{}'),
+(53,18,116,117,2,'com_modules.module.86','Joomla Version','{}'),
+(54,16,80,81,2,'com_menus.menu.1','Main Menu','{}'),
+(55,18,120,121,2,'com_modules.module.87','Sample Data','{}'),
+(56,8,44,61,2,'com_content.workflow.1','COM_WORKFLOW_BASIC_WORKFLOW','{}'),
+(57,56,45,46,3,'com_content.stage.1','COM_WORKFLOW_BASIC_STAGE','{}'),
+(58,56,47,48,3,'com_content.transition.1','UNPUBLISH','{}'),
+(59,56,49,50,3,'com_content.transition.2','PUBLISH','{}'),
+(60,56,51,52,3,'com_content.transition.3','TRASH','{}'),
+(61,56,53,54,3,'com_content.transition.4','ARCHIVE','{}'),
+(62,56,55,56,3,'com_content.transition.5','FEATURE','{}'),
+(63,56,57,58,3,'com_content.transition.6','UNFEATURE','{}'),
+(64,56,59,60,3,'com_content.transition.7','PUBLISH_AND_FEATURE','{}'),
+(65,1,169,170,1,'com_privacy','com_privacy','{}'),
+(66,1,171,172,1,'com_actionlogs','com_actionlogs','{}'),
+(67,18,102,103,2,'com_modules.module.88','Latest Actions','{}'),
+(68,18,104,105,2,'com_modules.module.89','Privacy Dashboard','{}'),
+(70,18,114,115,2,'com_modules.module.103','Site','{}'),
+(71,18,118,119,2,'com_modules.module.104','System','{}'),
+(72,18,122,123,2,'com_modules.module.91','System Dashboard','{}'),
+(73,18,124,125,2,'com_modules.module.92','Content Dashboard','{}'),
+(74,18,126,127,2,'com_modules.module.93','Menus Dashboard','{}'),
+(75,18,128,129,2,'com_modules.module.94','Components Dashboard','{}'),
+(76,18,130,131,2,'com_modules.module.95','Users Dashboard','{}'),
+(77,18,132,133,2,'com_modules.module.99','Frontend Link','{}'),
+(78,18,134,135,2,'com_modules.module.100','Messages','{}'),
+(79,18,136,137,2,'com_modules.module.101','Post Install Messages','{}'),
+(80,18,138,139,2,'com_modules.module.102','User Status','{}'),
+(82,18,140,141,2,'com_modules.module.105','3rd Party','{}'),
+(83,18,142,143,2,'com_modules.module.106','Help Dashboard','{}'),
+(84,18,144,145,2,'com_modules.module.107','Privacy Requests','{}'),
+(85,18,146,147,2,'com_modules.module.108','Privacy Status','{}'),
+(86,18,148,149,2,'com_modules.module.96','Popular Articles','{}'),
+(87,18,150,151,2,'com_modules.module.97','Recently Added Articles','{}'),
+(88,18,152,153,2,'com_modules.module.98','Logged-in Users','{}'),
+(89,18,154,155,2,'com_modules.module.90','Login Support','{}'),
+(90,1,191,198,1,'com_scheduler','com_scheduler','{}'),
+(91,1,199,200,1,'com_associations','com_associations','{}'),
+(92,1,201,202,1,'com_categories','com_categories','{}'),
+(93,1,203,204,1,'com_fields','com_fields','{}'),
+(94,1,205,206,1,'com_workflow','com_workflow','{}'),
+(95,1,207,208,1,'com_guidedtours','com_guidedtours','{}'),
+(96,18,156,157,2,'com_modules.module.109','Guided Tours','{}'),
+(97,90,192,193,2,'com_scheduler.task.1','Rotate Logs','{}'),
+(98,90,194,195,2,'com_scheduler.task.2','Session GC','{}'),
+(99,90,196,197,2,'com_scheduler.task.3','Update Notification','{}'),
 (100,27,19,20,3,'com_content.article.1','We Won Paid Sick Leave for 1.2 Million Workers','{}'),
 (101,27,21,22,3,'com_content.article.2','Housing Is a Human Right: Our 2026 Platform','{}'),
 (102,27,23,24,3,'com_content.article.3','Meet the Candidates Running on Our Line This Fall','{}'),
 (103,27,25,26,3,'com_content.article.4','About Us','{}'),
 (104,27,27,28,3,'com_content.article.5','Take Action','{}'),
-(105,8,54,55,2,'com_content.category.8','Latest','{}'),
+(105,8,62,63,2,'com_content.category.8','Latest','{}'),
 (106,27,29,30,3,'com_content.article.6','Volunteer','{}'),
 (107,27,31,32,3,'com_content.article.7','Run for Office','{}'),
-(108,27,33,34,3,'com_content.article.8','Privacy Policy','{}');
+(108,27,33,34,3,'com_content.article.8','Privacy Policy','{}'),
+(109,27,35,36,3,'com_content.article.9','Our 2026 Candidates','{}'),
+(110,27,37,38,3,'com_content.article.10','Working Families Guarantee','{}'),
+(111,27,39,40,3,'com_content.article.11','Become a WFP Member','{}'),
+(112,27,41,42,3,'com_content.article.12','Make Your Plan to Vote','{}');
 /*!40000 ALTER TABLE `jos_assets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -639,7 +643,7 @@ CREATE TABLE `jos_content` (
   KEY `idx_featured_catid` (`featured`,`catid`),
   KEY `idx_language` (`language`),
   KEY `idx_alias` (`alias`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -649,14 +653,18 @@ CREATE TABLE `jos_content` (
 LOCK TABLES `jos_content` WRITE;
 /*!40000 ALTER TABLE `jos_content` DISABLE KEYS */;
 INSERT INTO `jos_content` VALUES
-(1,100,'We Won Paid Sick Leave for 1.2 Million Workers','we-won-paid-sick-leave-for-1-2-million-workers','<p>After a two-year grassroots campaign led by working families across the state, the legislature passed one of the strongest paid sick leave laws in the country.</p>','<p>This victory belongs to the thousands of members who knocked doors, made calls and told their stories. When we organize, we win.</p>',1,8,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,4,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
+(1,100,'We Won Paid Sick Leave for 1.2 Million Workers','we-won-paid-sick-leave-for-1-2-million-workers','<p>After a two-year grassroots campaign led by working families across the state, the legislature passed one of the strongest paid sick leave laws in the country.</p>','<p>This victory belongs to the thousands of members who knocked doors, made calls and told their stories. When we organize, we win.</p>',1,8,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,5,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
 (2,101,'Housing Is a Human Right: Our 2026 Platform','housing-is-a-human-right-our-2026-platform','<p>Rents are up, wages are flat, and corporate landlords are cashing in. Our new housing platform puts tenants and first-time homebuyers first.</p>','<p>We are fighting for universal rent stabilization, a massive investment in social housing, and an end to speculative evictions.</p>',1,8,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
 (3,102,'Meet the Candidates Running on Our Line This Fall','meet-the-candidates-running-on-our-line-this-fall','<p>From school boards to the state house, a new generation of working-class champions is stepping up — nurses, teachers, drivers and organizers.</p>','<p>Every one of them signed our pledge: no corporate PAC money, and a platform written by and for working people.</p>',1,8,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
 (4,103,'About Us','about-us','<p>We are a grassroots, multiracial movement of working people. We recruit, train and elect leaders who come from our communities and answer to them — not to big donors.</p>','<p>Founded by unions and community organizations, we believe the people closest to the problem are closest to the solution. Join us and build power where you live.</p>',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
 (5,104,'Take Action','take-action','<p>Real change starts with people like you. Volunteer for a campaign, join a local chapter, or chip in to power the movement.</p>','<ul><li>Knock doors with a local team</li><li>Make calls from home</li><li>Host a house meeting</li><li>Become a monthly donor</li></ul>',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
 (6,106,'Volunteer','volunteer','<p>Knock doors, make calls, host a house meeting. Sign up and an organizer near you will get in touch.</p>','<p>No experience needed — we train every volunteer. Bring a friend.</p>',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
 (7,107,'Run for Office','run-for-office','<p>The best candidates are the people our communities already trust. If that is you, we want to talk.</p>','<p>Our candidate pipeline provides training, mentorship and a movement behind you.</p>',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
-(8,108,'Privacy Policy','privacy-policy','<p>We respect your privacy. This page explains what data we collect and how we use it.</p>','<p>We never sell your data. You can unsubscribe from our communications at any time.</p>',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*','');
+(8,108,'Privacy Policy','privacy-policy','<p>We respect your privacy. This page explains what data we collect and how we use it.</p>','<p>We never sell your data. You can unsubscribe from our communications at any time.</p>',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
+(9,109,'Our 2026 Candidates','our-2026-candidates','<p>Meet the nurses, teachers, drivers and organizers running on our line this year — every one of them pledged to answer to working people, not corporate donors.</p>','',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
+(10,110,'Working Families Guarantee','working-families-guarantee','<p>Our promise to every family: a good job, a safe home, quality healthcare and schools that work — guaranteed.</p>','',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
+(11,111,'Become a WFP Member','become-a-wfp-member','<p>Membership is the backbone of our movement. Join thousands of working people building power in their communities.</p>','',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*',''),
+(12,112,'Make Your Plan to Vote','make-your-plan-to-vote','<p>Check your registration, find your polling place, and make a plan to vote in the next election.</p>','',1,2,'2026-07-28 12:00:00',272,'','2026-07-28 12:00:00',272,NULL,NULL,'2026-07-28 12:00:00',NULL,'{}','{}','{}',1,0,'','',1,0,'{\"robots\":\"\",\"author\":\"\",\"rights\":\"\"}',0,'*','');
 /*!40000 ALTER TABLE `jos_content` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2151,7 +2159,7 @@ CREATE TABLE `jos_menu` (
   KEY `idx_alias` (`alias`(100)),
   KEY `idx_path` (`path`(100)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2161,7 +2169,7 @@ CREATE TABLE `jos_menu` (
 LOCK TABLES `jos_menu` WRITE;
 /*!40000 ALTER TABLE `jos_menu` DISABLE KEYS */;
 INSERT INTO `jos_menu` VALUES
-(1,'','Menu_Item_Root','root','','','','',1,0,0,0,NULL,NULL,0,0,'',0,'',0,71,0,'*',0,NULL,NULL),
+(1,'','Menu_Item_Root','root','','','','',1,0,0,0,NULL,NULL,0,0,'',0,'',0,97,0,'*',0,NULL,NULL),
 (2,'main','com_banners','Banners','','Banners','index.php?option=com_banners','component',1,1,1,3,NULL,NULL,0,0,'class:bookmark',0,'',1,10,0,'*',1,NULL,NULL),
 (3,'main','com_banners','Banners','','Banners/Banners','index.php?option=com_banners&view=banners','component',1,2,2,3,NULL,NULL,0,0,'class:banners',0,'',2,3,0,'*',1,NULL,NULL),
 (4,'main','com_banners_categories','Categories','','Banners/Categories','index.php?option=com_categories&view=categories&extension=com_banners','component',1,2,2,5,NULL,NULL,0,0,'class:banners-cat',0,'',4,5,0,'*',1,NULL,NULL),
@@ -2183,20 +2191,33 @@ INSERT INTO `jos_menu` VALUES
 (20,'main','com_finder_filters','Smart-Search-Filters','','Smart Search/Smart-Search-Filters','index.php?option=com_finder&view=filters','component',1,13,2,23,NULL,NULL,0,0,'class:finder-filters',0,'',34,35,0,'*',1,NULL,NULL),
 (21,'main','com_finder_searches','Smart-Search-Searches','','Smart Search/Smart-Search-Searches','index.php?option=com_finder&view=searches','component',1,13,2,23,NULL,NULL,0,0,'class:finder-searches',0,'',36,37,0,'*',1,NULL,NULL),
 (101,'mainmenu','Home','home','','home','index.php?option=com_content&view=featured','component',1,1,1,19,NULL,NULL,0,1,'',0,'{\"num_leading_articles\":0,\"num_intro_articles\":0,\"num_links\":0,\"show_page_heading\":0,\"show_no_articles\":0}',41,42,1,'*',0,NULL,NULL),
-(102,'mainmenu','About','about','','about','index.php?option=com_content&view=article&id=4','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',43,44,0,'*',0,NULL,NULL),
-(103,'mainmenu','Our Fights','our-fights','','our-fights','index.php?option=com_content&view=category&layout=blog&id=2','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"layout_type\":\"blog\",\"num_leading_articles\":0,\"num_intro_articles\":6,\"num_columns\":3,\"show_page_heading\":1}',45,46,0,'*',0,NULL,NULL),
-(104,'mainmenu','News','news','','news','index.php?option=com_content&view=category&layout=blog&id=8','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"layout_type\":\"blog\",\"num_leading_articles\":0,\"num_intro_articles\":9,\"num_columns\":3,\"show_page_heading\":1}',47,48,0,'*',0,NULL,NULL),
-(105,'mainmenu','Take Action','take-action','','take-action','index.php?option=com_content&view=article&id=5','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',49,50,0,'*',0,NULL,NULL),
-(106,'getactive','Volunteer','volunteer','','volunteer','index.php?option=com_content&view=article&id=6','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',51,52,0,'*',0,NULL,NULL),
-(107,'getactive','Run for office','run-for-office','','run-for-office','index.php?option=com_content&view=article&id=7','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',53,54,0,'*',0,NULL,NULL),
-(109,'getactive','Donate','donate','','donate','#donate','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',65,66,0,'*',0,NULL,NULL),
-(110,'footermenu','About us','about-us','','about-us','index.php?option=com_content&view=article&id=4','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',57,58,0,'*',0,NULL,NULL),
-(112,'footermenu','Latest news','latest-news','','latest-news','index.php?option=com_content&view=category&layout=blog&id=8','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"layout_type\":\"blog\",\"num_leading_articles\":0,\"num_intro_articles\":9,\"num_columns\":3,\"show_page_heading\":1}',67,68,0,'*',0,NULL,NULL),
-(114,'footerlegal','Privacy policy','privacy-policy','','privacy-policy','index.php?option=com_content&view=article&id=8','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',61,62,0,'*',0,NULL,NULL),
-(115,'footerlegal','Contact','contact','','contact','mailto:hello@example.org','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',63,64,0,'*',0,NULL,NULL),
-(116,'getactive','Take action','take-action-ga','','take-action-ga','index.php?option=com_content&view=article&id=5','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{}',55,56,0,'*',0,NULL,NULL),
-(117,'footermenu','Our fights','our-fights-ftr','','our-fights-ftr','index.php?option=com_content&view=category&layout=blog&id=2','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{}',59,60,0,'*',0,NULL,NULL),
-(118,'footermenu','Take action','take-action-ftr','','take-action-ftr','index.php?option=com_content&view=article&id=5','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{}',69,70,0,'*',0,NULL,NULL);
+(102,'hidden','About','about','','about','index.php?option=com_content&view=article&id=4','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',43,44,0,'*',0,NULL,NULL),
+(103,'hidden','Our Fights','our-fights','','our-fights','index.php?option=com_content&view=category&layout=blog&id=2','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"layout_type\":\"blog\",\"num_leading_articles\":0,\"num_intro_articles\":6,\"num_columns\":3,\"show_page_heading\":1}',45,46,0,'*',0,NULL,NULL),
+(104,'mainmenu','Latest News','news','','news','index.php?option=com_content&view=category&layout=blog&id=8','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"layout_type\":\"blog\",\"num_leading_articles\":0,\"num_intro_articles\":9,\"num_columns\":3,\"show_page_heading\":1}',51,52,0,'*',0,NULL,NULL),
+(105,'hidden','Take Action','take-action','','take-action','index.php?option=com_content&view=article&id=5','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',49,50,0,'*',0,NULL,NULL),
+(119,'mainmenu','Our 2026 Candidates','our-2026-candidates','','our-2026-candidates','index.php?option=com_content&view=article&id=9','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',47,48,0,'*',0,NULL,NULL),
+(120,'mainmenu','Events','events','','events','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',53,54,0,'*',0,NULL,NULL),
+(121,'mainmenu','Working Families Guarantee','working-families-guarantee','','working-families-guarantee','index.php?option=com_content&view=article&id=10','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',55,56,0,'*',0,NULL,NULL),
+(122,'getactive','Become a WFP Member','become-a-wfp-member','','become-a-wfp-member','index.php?option=com_content&view=article&id=11','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',57,58,0,'*',0,NULL,NULL),
+(123,'getactive','Make your plan to vote','make-your-plan-to-vote','','make-your-plan-to-vote','index.php?option=com_content&view=article&id=12','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',59,60,0,'*',0,NULL,NULL),
+(124,'getactive','Join a Welcome Gathering','join-a-welcome-gathering','','join-a-welcome-gathering','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',61,62,0,'*',0,NULL,NULL),
+(125,'getactive','Volunteer with WFP','volunteer-with-wfp','','volunteer-with-wfp','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',63,64,0,'*',0,NULL,NULL),
+(126,'getactive','Apply for our endorsement','apply-for-our-endorsement','','apply-for-our-endorsement','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',65,66,0,'*',0,NULL,NULL),
+(127,'footermenu','Our 2026 Candidates','candidates-ftr','','candidates-ftr','index.php?option=com_content&view=article&id=9','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',67,68,0,'*',0,NULL,NULL),
+(128,'footermenu','Latest News','latest-news-ftr','','latest-news-ftr','index.php?option=com_content&view=category&layout=blog&id=8','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"layout_type\":\"blog\",\"num_leading_articles\":0,\"num_intro_articles\":9,\"num_columns\":3,\"show_page_heading\":1}',69,70,0,'*',0,NULL,NULL),
+(129,'footermenu','Events','events-ftr','','events-ftr','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',71,72,0,'*',0,NULL,NULL),
+(130,'footermenu','Sign Up','sign-up-ftr','','sign-up-ftr','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'{\"menu-anchor_css\":\"wfp-underline\"}',73,74,0,'*',0,NULL,NULL),
+(131,'footermenu','Donate','donate-ftr','','donate-ftr','#donate','url',1,1,1,0,NULL,NULL,0,1,' ',0,'{\"menu-anchor_css\":\"wfp-underline\"}',75,76,0,'*',0,NULL,NULL),
+(132,'tertiarynav','About','about-tert','','about-tert','index.php?option=com_content&view=article&id=4','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',77,78,0,'*',0,NULL,NULL),
+(133,'tertiarynav','Get Active','get-active-tert','','get-active-tert','index.php?option=com_content&view=article&id=5','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',79,80,0,'*',0,NULL,NULL),
+(134,'tertiarynav','Store','store','','store','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',81,82,0,'*',0,NULL,NULL),
+(135,'tertiarynav','Sign Up','sign-up-tert','','sign-up-tert','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'{\"menu-anchor_css\":\"wfp-underline\"}',83,84,0,'*',0,NULL,NULL),
+(136,'footerlegal','Jobs','jobs','','jobs','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',85,86,0,'*',0,NULL,NULL),
+(137,'footerlegal','Media Center','media-center','','media-center','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',87,88,0,'*',0,NULL,NULL),
+(138,'footerlegal','Public Filings','public-filings','','public-filings','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',89,90,0,'*',0,NULL,NULL),
+(139,'footerlegal','Media Inquiries','media-inquiries','','media-inquiries','#','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',91,92,0,'*',0,NULL,NULL),
+(140,'footerlegal','Contact','contact-ftr','','contact-ftr','mailto:hello@example.org','url',1,1,1,0,NULL,NULL,0,1,' ',0,'[]',93,94,0,'*',0,NULL,NULL),
+(141,'footerlegal','Privacy Policy','privacy-ftr','','privacy-ftr','index.php?option=com_content&view=article&id=8','component',1,1,1,19,NULL,NULL,0,1,' ',0,'{\"show_title\":1}',95,96,0,'*',0,NULL,NULL);
 /*!40000 ALTER TABLE `jos_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2217,7 +2238,7 @@ CREATE TABLE `jos_menu_types` (
   `ordering` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_menutype` (`menutype`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2230,7 +2251,9 @@ INSERT INTO `jos_menu_types` VALUES
 (1,0,'mainmenu','Main Menu','The main menu for the site',0,1),
 (2,0,'getactive','Get Active','',0,0),
 (3,0,'footermenu','Footer Menu','',0,0),
-(4,0,'footerlegal','Footer Legal','',0,0);
+(4,0,'footerlegal','Footer Legal','',0,0),
+(5,0,'hidden','Hidden Pages','',0,0),
+(6,0,'tertiarynav','Tertiary Nav','',0,0);
 /*!40000 ALTER TABLE `jos_menu_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2319,7 +2342,7 @@ CREATE TABLE `jos_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2365,16 +2388,19 @@ INSERT INTO `jos_modules` VALUES
 (107,84,'Privacy Requests','','',1,'cpanel-privacy',NULL,NULL,NULL,NULL,1,'mod_privacy_dashboard',1,1,'{\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\",\"module_tag\":\"div\",\"bootstrap_size\":\"12\",\"header_tag\":\"h2\",\"header_class\":\"\"}',1,'*'),
 (108,85,'Privacy Status','','',1,'cpanel-privacy',NULL,NULL,NULL,NULL,1,'mod_privacy_status',1,1,'{\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\",\"module_tag\":\"div\",\"bootstrap_size\":\"12\",\"header_tag\":\"h2\",\"header_class\":\"\"}',1,'*'),
 (109,96,'Guided Tours','','',1,'status',NULL,NULL,NULL,NULL,1,'mod_guidedtours',1,1,'',1,'*'),
-(110,0,'Manşet (Hero)','','<span class=\"wfp-kicker\">People power since 2026</span>\n<h1>A nation that works for the <strong>many</strong>, not the few</h1>\n<p>We are working people building a movement — electing champions from our own communities and holding them accountable to us, not to corporate donors.</p>\n<div class=\"wfp-hero-actions\">\n	<a class=\"wfp-btn\" href=\"index.php?option=com_content&amp;view=article&amp;id=5&amp;Itemid=105\">Take action</a>\n	<a class=\"wfp-btn wfp-btn-purple\" href=\"index.php?option=com_content&amp;view=article&amp;id=4&amp;Itemid=102\">Who we are</a>\n</div>',1,'hero',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\"}',0,'*'),
+(110,0,'Manşet (Hero)','','<h1>Making our nation work <strong>for the many, not the few.</strong></h1>',1,'hero',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\"}',0,'*'),
 (111,0,'Our fights','','<ul class=\"wfp-issues\">\n	<li class=\"wfp-issue\"><div class=\"wfp-issue-icon\">🏠</div><h3><a href=\"#\">Housing for all</a></h3><p>Rent stabilization, social housing and an end to speculative evictions.</p></li>\n	<li class=\"wfp-issue\"><div class=\"wfp-issue-icon\">💼</div><h3><a href=\"#\">Wages &amp; workers\' rights</a></h3><p>A living wage, paid leave and the unfettered right to organize a union.</p></li>\n	<li class=\"wfp-issue\"><div class=\"wfp-issue-icon\">🩺</div><h3><a href=\"#\">Healthcare</a></h3><p>Quality, affordable care for every family — no one left behind.</p></li>\n	<li class=\"wfp-issue\"><div class=\"wfp-issue-icon\">🌍</div><h3><a href=\"#\">Climate justice</a></h3><p>Green jobs and clean air for the communities hit first and worst.</p></li>\n	<li class=\"wfp-issue\"><div class=\"wfp-issue-icon\">📚</div><h3><a href=\"#\">Public education</a></h3><p>Fully funded neighborhood schools and debt-free college.</p></li>\n	<li class=\"wfp-issue\"><div class=\"wfp-issue-icon\">🗳️</div><h3><a href=\"#\">Democracy</a></h3><p>Getting big money out of politics and making every vote count.</p></li>\n</ul>',2,'top-a',NULL,NULL,NULL,NULL,1,'mod_custom',1,1,'{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\"}',0,'*'),
-(112,0,'Contribute','','<div class=\"wfp-cta-inner\">\n	<div>\n		<h2>Join the fight</h2>\n		<p>Get campaign updates, actions near you, and news from the movement — straight to your inbox.</p>\n	</div>\n	<form action=\"#\" method=\"post\">\n		<label class=\"skip-link\" for=\"wfp-newsletter-email\">Email</label>\n		<input type=\"email\" id=\"wfp-newsletter-email\" name=\"email\" placeholder=\"you@example.org\" required>\n		<button type=\"submit\" class=\"wfp-btn wfp-btn-purple\">Sign up</button>\n	</form>\n</div>',3,'cta',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\"}',0,'*'),
+(112,0,'Contribute','','<div class=\"wfp-cta-inner\">\n	<div>\n		<h2>Contribute</h2>\n		<p>Help us fight back and build real, lasting power for working people across the country with a contribution today.</p>\n		<div class=\"wfp-donate-nav\">\n			<a class=\"wfp-btn\" href=\"#\">$10</a>\n			<a class=\"wfp-btn\" href=\"#\">$27</a>\n			<a class=\"wfp-btn\" href=\"#\">$100</a>\n			<a class=\"wfp-btn\" href=\"#\">$250</a>\n			<a class=\"wfp-btn wfp-btn-other\" href=\"#\">Other Amount</a>\n		</div>\n	</div>\n</div>',3,'cta',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"backgroundimage\":\"\",\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"cachemode\":\"static\",\"style\":\"0\"}',0,'*'),
 (116,0,'Get Active','','',1,'below-top',NULL,NULL,NULL,NULL,1,'mod_menu',1,1,'{\"menutype\":\"getactive\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
-(117,0,'Latest News','','',1,'main-top',NULL,NULL,NULL,NULL,1,'mod_articles',1,1,'{\"mode\":\"normal\",\"catid\":[\"8\"],\"count\":3,\"show_child_category_articles\":0,\"levels\":1,\"show_featured\":\"\",\"article_ordering\":\"a.publish_up\",\"article_ordering_direction\":\"DESC\",\"item_title\":1,\"link_titles\":1,\"item_heading\":\"h2\",\"show_date\":1,\"show_date_field\":\"created\",\"show_date_format\":\"d F Y\",\"show_introtext\":1,\"introtext_limit\":160,\"show_readmore\":1,\"show_category\":0,\"show_author\":0,\"show_hits\":0,\"layout\":\"wfp:wfpcards\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
-(118,0,'Feature (Siyah Bant)','','<span class=\"wfp-feature-sub\">We fight to win</span>\n<h2>When we organize, we win</h2>\n<p>From city councils to state houses, our members are proving that people power beats big money. Join a campaign near you and be part of the next victory.</p>\n<div class=\"wfp-feature-links\">\n	<a class=\"wfp-btn\" href=\"index.php?option=com_content&amp;view=article&amp;id=5&amp;Itemid=105\">Take action</a>\n	<a class=\"wfp-under-link\" href=\"index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=2&amp;Itemid=103\">See our fights</a>\n</div>',1,'main-bottom',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*'),
+(117,0,'Latest','','',1,'main-top',NULL,NULL,NULL,NULL,1,'mod_articles',1,1,'{\"mode\":\"normal\",\"catid\":[\"8\"],\"count\":3,\"show_child_category_articles\":0,\"levels\":1,\"show_featured\":\"\",\"article_ordering\":\"a.publish_up\",\"article_ordering_direction\":\"DESC\",\"item_title\":1,\"link_titles\":1,\"item_heading\":\"h2\",\"show_date\":1,\"show_date_field\":\"created\",\"show_date_format\":\"d F Y\",\"show_introtext\":1,\"introtext_limit\":160,\"show_readmore\":1,\"show_category\":0,\"show_author\":0,\"show_hits\":0,\"layout\":\"wfp:wfpcards\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
+(118,0,'Feature (Siyah Bant)','','<span class=\"wfp-feature-sub\">Working Families Party</span>\n<h2>We\'re building a multiracial party of working people to transform our country.</h2>\n<p>State by state and community by community, WFP is building a political home for all of us who see bigotry, bailouts, and business as usual in our political system and ask, \"Is that the best we can do?\"</p>\n<div class=\"wfp-feature-links\">\n	<a class=\"wfp-under-link\" href=\"index.php?option=com_content&amp;view=article&amp;id=4&amp;Itemid=102\">Who We Are</a>\n	<a class=\"wfp-under-link\" href=\"index.php?option=com_content&amp;view=article&amp;id=11\">Membership</a>\n	<a class=\"wfp-under-link\" href=\"index.php?option=com_content&amp;view=article&amp;id=9\">Our Candidates</a>\n</div>',1,'main-bottom',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*'),
 (119,0,'Footer Menu','','',1,'footer-a',NULL,NULL,NULL,NULL,1,'mod_menu',1,0,'{\"menutype\":\"footermenu\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
-(120,0,'Footer Legal','','',1,'footer-b',NULL,NULL,NULL,NULL,1,'mod_menu',1,0,'{\"menutype\":\"footerlegal\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
-(121,0,'Footer Contact','','<h2>Contact us</h2>\n<p>123 Movement St, Anytown<br>hello@example.org &middot; +1 (000) 000-0000</p>',1,'footer-c',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*'),
-(122,0,'Footer Disclaimer','','<p>We are a grassroots, multiracial movement of working people fighting for a nation that works for the many, not the few. Contributions are not tax deductible.</p>\n<div class=\"wfp-paid-for\">Paid for by Working Families. Not authorized by any candidate or candidate\'s committee.</div>',1,'copyright',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*');
+(120,0,'Footer Tertiary','','',1,'footer-b',NULL,NULL,NULL,NULL,1,'mod_menu',1,0,'{\"menutype\":\"tertiarynav\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
+(121,0,'Footer Contact','','<h2>Contact By Mail</h2>\n<p>Working Families Party<br>77 Sands St. #6<br>Brooklyn, NY 11201</p>\n<p class=\"wfp-made\">Made with <a href=\"#\" rel=\"noopener\">Middle Seat</a></p>',1,'footer-c',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*'),
+(122,0,'Footer Disclaimer','','<p>By taking action on this page, I affirm my intent to join or continue as a member of the Working Families Party, and to receive periodic updates from WFP.</p>\n<div class=\"wfp-paid-for\">Paid For By Working Families Party</div>',1,'copyright',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*'),
+(123,0,'Header Tertiary','','',1,'topbar',NULL,NULL,NULL,NULL,1,'mod_menu',1,0,'{\"menutype\":\"tertiarynav\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
+(124,0,'Footer Small Menu','','',1,'footer-d',NULL,NULL,NULL,NULL,1,'mod_menu',1,0,'{\"menutype\":\"footerlegal\",\"base\":\"\",\"startLevel\":1,\"endLevel\":0,\"showAllChildren\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900}',0,'*'),
+(125,0,'Latest Extras','','<div class=\"wfp-latest-extras\">\n	<p class=\"wfp-view-all\"><a class=\"wfp-under-link\" href=\"index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=8&amp;Itemid=104\">View All News</a></p>\n	<aside class=\"wfp-tiny-cta\">\n		<p class=\"wfp-tiny-cta-sub\">Stay Up to Date:</p>\n		<p class=\"wfp-tiny-cta-hed\">Text <b>\'WFP\'</b> to <b>30403</b></p>\n	</aside>\n</div>',2,'main-top',NULL,NULL,NULL,NULL,1,'mod_custom',1,0,'{\"prepare_content\":0,\"layout\":\"_:default\",\"moduleclass_sfx\":\"\",\"cache\":1,\"cache_time\":900,\"style\":\"0\"}',0,'*');
 /*!40000 ALTER TABLE `jos_modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2447,7 +2473,10 @@ INSERT INTO `jos_modules_menu` VALUES
 (119,0),
 (120,0),
 (121,0),
-(122,0);
+(122,0),
+(123,0),
+(124,0),
+(125,101);
 /*!40000 ALTER TABLE `jos_modules_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2836,6 +2865,7 @@ INSERT INTO `jos_session` VALUES
 ('014f1f816193b654986dde921cfaa6d6',0,1,1785249423,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ5NDIzO3M6NDoibGFzdCI7aToxNzg1MjQ5NDIzO3M6Mzoibm93IjtpOjE3ODUyNDk0MjM7fXM6NToidG9rZW4iO3M6MzI6IjEwZGQ4M2FlZGY3YTM3NjZjZDIxZmE1YjY2MDMwNWMzIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('01ed9e4b4d6efb7e548e0c52a98efc46',0,1,1785249386,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ5Mzg2O3M6NDoibGFzdCI7aToxNzg1MjQ5Mzg2O3M6Mzoibm93IjtpOjE3ODUyNDkzODY7fXM6NToidG9rZW4iO3M6MzI6IjdmZDdkZDE3Yjk5NjU5ZTI2MmNlZDdkN2RhYzQ5ZGExIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('07c4ae16d88abb8047359779d7cff5db',0,1,1785249378,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ5Mzc3O3M6NDoibGFzdCI7aToxNzg1MjQ5Mzc3O3M6Mzoibm93IjtpOjE3ODUyNDkzNzc7fXM6NToidG9rZW4iO3M6MzI6IjMxYzE0N2Y5MWFmYjMyNzg3NTMxMzhlNTQ0NmU5NWU5Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
+('12028b1768d39435a83548e5c8839f55',0,1,1785252727,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyNzI3O3M6NDoibGFzdCI7aToxNzg1MjUyNzI3O3M6Mzoibm93IjtpOjE3ODUyNTI3Mjc7fXM6NToidG9rZW4iO3M6MzI6IjJiZjY1YWFiYzg5YWQ3M2UyNzlmNzNmYTE4ODc5YmMxIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('1346cf9242f13be8bc7d92c13ee94134',0,1,1785252318,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyMzE3O3M6NDoibGFzdCI7aToxNzg1MjUyMzE3O3M6Mzoibm93IjtpOjE3ODUyNTIzMTc7fXM6NToidG9rZW4iO3M6MzI6ImJmMjU5ZTI4Y2JlOGU4NjJlNDlkN2ZmZWE1NDRmNmY5Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('18c1df2c740cb71a4a06346505098f86',1,1,1785244727,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ0NzI3O3M6NDoibGFzdCI7aToxNzg1MjQ0NzI3O3M6Mzoibm93IjtpOjE3ODUyNDQ3Mjc7fXM6NToidG9rZW4iO3M6MzI6IjFiYjZkMmM3NmQ1ZTI4Y2JiOTA4NjIzMDM2ZTIwOWMwIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('19525b0b85f22421680239f31f16e4c0',1,1,1785244662,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ0NjYyO3M6NDoibGFzdCI7aToxNzg1MjQ0NjYyO3M6Mzoibm93IjtpOjE3ODUyNDQ2NjI7fXM6NToidG9rZW4iO3M6MzI6IjY0NjFmYWUxMzg1ZGRjMjczOGQ2Y2U4NTVkZDUzNmI1Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
@@ -2845,14 +2875,18 @@ INSERT INTO `jos_session` VALUES
 ('3a69c25abdd400f3af0585658c93ff27',0,1,1785245578,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjQ7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ1NTc3O3M6NDoibGFzdCI7aToxNzg1MjQ1NTc4O3M6Mzoibm93IjtpOjE3ODUyNDU1Nzg7fXM6NToidG9rZW4iO3M6MzI6IjljZTk2NDBiMzljNDZhNjIwYzdhOWIxODMwYmNkMzhlIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('46424d7ae2eebbc47bc8b6d1e66cfb7d',0,1,1785245579,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ1NTc5O3M6NDoibGFzdCI7aToxNzg1MjQ1NTc5O3M6Mzoibm93IjtpOjE3ODUyNDU1Nzk7fXM6NToidG9rZW4iO3M6MzI6Ijk3OGZjYzVjZjdlZTEzOWZlZmRkMDI4MDI3N2NmNDhiIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('4d1ae4f8c9d49ab58fcb7c6a8fc199a6',0,1,1785245558,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ1NTU4O3M6NDoibGFzdCI7aToxNzg1MjQ1NTU4O3M6Mzoibm93IjtpOjE3ODUyNDU1NTg7fXM6NToidG9rZW4iO3M6MzI6IjU2ZWMwOGYxNDg3YzQ3N2NhMzYyMDBmMGU5ZjY1NTZjIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
+('4d515b78c1e69473d85806911d1687c1',0,1,1785252691,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyNjkxO3M6NDoibGFzdCI7aToxNzg1MjUyNjkxO3M6Mzoibm93IjtpOjE3ODUyNTI2OTE7fXM6NToidG9rZW4iO3M6MzI6IjU2ZWExYjNlYzBjNDY0NmU0NGRhYWMyZDk2ZDkwYTgyIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('571dfb15e995fe4c8b29cae1da22e91e',1,1,1785244549,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ0NTQ5O3M6NDoibGFzdCI7aToxNzg1MjQ0NTQ5O3M6Mzoibm93IjtpOjE3ODUyNDQ1NDk7fXM6NToidG9rZW4iO3M6MzI6IjMxMDkwMzk5ZDQ4YzYzZTZjZTU5YzZiMzcyYmYxODM3Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('58e30ab443a51059b5dfcbca776b1e39',0,1,1785252328,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyMzI4O3M6NDoibGFzdCI7aToxNzg1MjUyMzI4O3M6Mzoibm93IjtpOjE3ODUyNTIzMjg7fXM6NToidG9rZW4iO3M6MzI6IjgzM2EwZDIzMzZlMzUwYmM1ZjZkMDAzODUwOTQwN2JmIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('5d7cf66f100de55226598fc62a5125b6',0,1,1785245601,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ1NjAxO3M6NDoibGFzdCI7aToxNzg1MjQ1NjAxO3M6Mzoibm93IjtpOjE3ODUyNDU2MDE7fXM6NToidG9rZW4iO3M6MzI6IjQ1ZWI1OTRhMTI1YjMxZjE1MDkxMmE0ZTk4MjU3MjRlIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('6caaae8a09f35148d9faea6e8568e4cf',0,1,1785245552,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ1NTUxO3M6NDoibGFzdCI7aToxNzg1MjQ1NTUxO3M6Mzoibm93IjtpOjE3ODUyNDU1NTE7fXM6NToidG9rZW4iO3M6MzI6IjY3YTA0NDczN2YzM2NmZTVmZjdjNDRkZjYxMmE5NTQ5Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('703d3757a5bd3c2edb534fe02b528296',0,1,1785252228,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyMjI4O3M6NDoibGFzdCI7aToxNzg1MjUyMjI4O3M6Mzoibm93IjtpOjE3ODUyNTIyMjg7fXM6NToidG9rZW4iO3M6MzI6IjNiYTdkZGNjMDZiN2EwYmMxY2FiZmYxMTAzMDZkMGUyIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('822f86be061fb0d45cba056e95e7bedd',1,0,1785244570,'joomla|s:780:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjQ6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjM1O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTc4NTI0NDU2ODtzOjQ6Imxhc3QiO2k6MTc4NTI0NDU3MDtzOjM6Im5vdyI7aToxNzg1MjQ0NTcwO31zOjU6InRva2VuIjtzOjMyOiJkNTEwMmQ1ZmJkODk4ZjA5YzVkNDlmMWUwNDJlMmRlNSI7fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO2k6MjcyO31zOjk6ImNvbV91c2VycyI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxMToibWZhX2NoZWNrZWQiO2k6MTt9fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czoxMjoiACoAc2VwYXJhdG9yIjtzOjE6Ii4iO30=\";',272,'admin'),
+('8396a165873375298d4d0934bc6bd6e5',0,1,1785252690,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyNjkwO3M6NDoibGFzdCI7aToxNzg1MjUyNjkwO3M6Mzoibm93IjtpOjE3ODUyNTI2OTA7fXM6NToidG9rZW4iO3M6MzI6ImI4N2M5NDEzNDYxMWE4YjQ0NWQxMDQzNDkyZjY0ODJjIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('85ce5bd9f50485fb5774fb83c69dd13b',0,1,1785252220,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyMjE5O3M6NDoibGFzdCI7aToxNzg1MjUyMjE5O3M6Mzoibm93IjtpOjE3ODUyNTIyMTk7fXM6NToidG9rZW4iO3M6MzI6IjRmZTc5YWNkMThkZjM4MWE4ZmU5MjY3NWYwMTU2MWIwIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
+('87190a0c42005a48e7d90b4cbe5c9dd9',0,1,1785252731,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjQ7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyNzMwO3M6NDoibGFzdCI7aToxNzg1MjUyNzMxO3M6Mzoibm93IjtpOjE3ODUyNTI3MzE7fXM6NToidG9rZW4iO3M6MzI6IjUwNDI3YmY0NjJlZTE5YzJiNmRhYjhmOWNiOWVjMmRmIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('87debe5cd025eb57b0cd102f42b80e07',1,0,1785244622,'joomla|s:780:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjQ6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjM1O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTc4NTI0NDYxOTtzOjQ6Imxhc3QiO2k6MTc4NTI0NDYyMjtzOjM6Im5vdyI7aToxNzg1MjQ0NjIyO31zOjU6InRva2VuIjtzOjMyOiI2MDFlZTg2YzgyNDFkMzc2NTdkYjIyYjVlMzQ3MDQ1NyI7fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7TzoyMDoiSm9vbWxhXENNU1xVc2VyXFVzZXIiOjE6e3M6MjoiaWQiO2k6MjcyO31zOjk6ImNvbV91c2VycyI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxMToibWZhX2NoZWNrZWQiO2k6MTt9fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czoxMjoiACoAc2VwYXJhdG9yIjtzOjE6Ii4iO30=\";',272,'admin'),
+('982efca7ffb6f4d5ebc38a69a658e1ef',0,1,1785252732,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyNzMyO3M6NDoibGFzdCI7aToxNzg1MjUyNzMyO3M6Mzoibm93IjtpOjE3ODUyNTI3MzI7fXM6NToidG9rZW4iO3M6MzI6ImU1YzVmMTE4ZDE4YTIzMmQyNWZhM2YyOWRlMzdkODhkIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('9dd6546f2a7e24ec1fc5a252454038df',0,1,1785249419,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ5NDE5O3M6NDoibGFzdCI7aToxNzg1MjQ5NDE5O3M6Mzoibm93IjtpOjE3ODUyNDk0MTk7fXM6NToidG9rZW4iO3M6MzI6IjAxYjUwOTRhNTBlODU3OThjNGYxZWQ0ZGZmOTMzNWU0Ijt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('b31eeae331e05add29e6b16a704a0ccf',0,1,1785252332,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjQ7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjUyMzMxO3M6NDoibGFzdCI7aToxNzg1MjUyMzMyO3M6Mzoibm93IjtpOjE3ODUyNTIzMzI7fXM6NToidG9rZW4iO3M6MzI6IjE2ZWM2NzBiY2NiZjY3MGFkMTk0NGI4ZGVmYmU5ZGExIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
 ('c2914c74ec6d8db51427f26c5a582d7a',1,1,1785244647,'joomla|s:700:\"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjM6e3M6Nzoic2Vzc2lvbiI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJjb3VudGVyIjtpOjE7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNzg1MjQ0NjQ3O3M6NDoibGFzdCI7aToxNzg1MjQ0NjQ3O3M6Mzoibm93IjtpOjE3ODUyNDQ2NDc7fXM6NToidG9rZW4iO3M6MzI6IjM4ODU2YTA2NTNjZWNmNTQ5YTg0NWUyMTc5NTY5MGJiIjt9czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6MTI6IgAqAHNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjIwOiJKb29tbGFcQ01TXFVzZXJcVXNlciI6MTp7czoyOiJpZCI7aTowO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjEyOiIAKgBzZXBhcmF0b3IiO3M6MToiLiI7fQ==\";',0,''),
@@ -2988,7 +3022,7 @@ INSERT INTO `jos_template_styles` VALUES
 (10,'atum',1,'1','Atum - Default',1,'','{\"hue\":\"hsl(214, 63%, 20%)\",\"bg-light\":\"#f0f4fb\",\"text-dark\":\"#495057\",\"text-light\":\"#ffffff\",\"link-color\":\"#2a69b8\",\"special-color\":\"#001b4c\",\"colorScheme\":\"os\",\"monochrome\":\"0\",\"loginLogo\":\"\",\"loginLogoAlt\":\"\",\"logoBrandLarge\":\"\",\"logoBrandLargeAlt\":\"\",\"logoBrandSmall\":\"\",\"logoBrandSmallAlt\":\"\"}'),
 (11,'cassiopeia',0,'0','Cassiopeia - Default',1,'','{\"brand\":\"1\",\"logoFile\":\"\",\"siteTitle\":\"\",\"siteDescription\":\"\",\"useFontScheme\":\"0\",\"colorName\":\"colors_standard\",\"fluidContainer\":\"0\",\"stickyHeader\":0,\"backTop\":0}'),
 (12,'cassiopeia_extended',0,'0','Cassiopeia Extended - Default',0,'cassiopeia','{\"brand\":\"1\",\"logoFile\":\"\",\"siteTitle\":\"\",\"siteDescription\":\"\",\"useFontScheme\":\"0\",\"systemFontBody\":\"\",\"systemFontHeading\":\"\",\"colorName\":\"colors_standard\",\"fluidContainer\":\"0\",\"stickyHeader\":\"0\",\"backTop\":\"0\",\"colorSettings\":\"0\",\"headerbg\":\"rgb(193, 205, 207)\",\"headercolor\":\"rgb(23, 23, 23)\",\"bodybg\":\"rgb(254, 254, 254)\",\"bodycolor\":\"rgb(23, 23, 23)\",\"linkcolor\":\"rgb(29, 121, 137)\",\"linkcolorh\":\"rgb(14, 59, 67)\",\"btnbg\":\"rgb(206, 60, 55)\",\"btnbgh\":\"rgb(131, 35, 32)\",\"btncolor\":\"rgb(254, 254, 254)\",\"btncolorh\":\"rgb(254, 254, 254)\",\"footerbg\":\"rgb(29, 121, 137)\",\"footercolor\":\"rgb(254, 254, 254)\",\"fontSettings\":\"0\",\"bodysize\":\"1\",\"h1size\":\"2\",\"h2size\":\"1.7\",\"h3size\":\"1.5\"}'),
-(13,'wfp',0,'1','WFP - Default',0,'','{\"siteTagline\":\"For the many, not the few\",\"donateUrl\":\"#donate\",\"donateLabel\":\"Donate\",\"joinUrl\":\"#join\",\"joinLabel\":\"Join us\",\"socialTwitter\":\"https://x.com/workingfamilies\",\"socialFacebook\":\"https://www.facebook.com/WorkingFamilies\",\"socialInstagram\":\"https://www.instagram.com/workingfamilies\",\"socialYoutube\":\"https://www.youtube.com/@workingfamiliesparty\",\"footerAbout\":\"We are a grassroots, multiracial movement of working people fighting for a nation that works for the many, not the few.\"}');
+(13,'wfp',0,'1','WFP - Default',0,'','{\"siteTagline\":\"For the many, not the few\",\"donateUrl\":\"#donate\",\"donateLabel\":\"Contribute\",\"joinUrl\":\"#join\",\"joinLabel\":\"Sign Up\",\"socialTwitter\":\"https://x.com/workingfamilies\",\"socialFacebook\":\"https://www.facebook.com/WorkingFamilies\",\"socialInstagram\":\"https://www.instagram.com/workingfamilies\",\"socialYoutube\":\"https://www.youtube.com/@workingfamiliesparty\",\"footerAbout\":\"We are a grassroots, multiracial movement of working people fighting for a nation that works for the many, not the few.\"}');
 /*!40000 ALTER TABLE `jos_template_styles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3671,4 +3705,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-28 15:26:26
+-- Dump completed on 2026-07-28 15:33:07

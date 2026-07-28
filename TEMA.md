@@ -74,21 +74,25 @@ Her ana sayfa bölgesi Joomla'nın kendi araçlarıyla yönetilir:
 
 | Alan | Nereden düzenlenir | Nasıl çalışır |
 |---|---|---|
-| **Üst menü** | Menus → **Main Menu** (öğeler) + System → Site Modules → **Main Menu** | `menu` pozisyonundaki menü modülü; öğe ekle/sil/sırala → header'a yansır |
-| **Manşet** | System → Site Modules → **Manşet (Hero)** | `hero` pozisyonunda özel HTML modülü; başlık/metin/butonlar burada (`<strong>` = siyah vurgu) |
-| **Get Active** | Menus → **Get Active** (öğeler) + Site Modules → **Get Active** | `below-top` pozisyonu, manşetin yanındaki mor kutu; her öğe bir sayfaya gider |
+| **Üst şerit (küçük menü)** | Menus → **Tertiary Nav** | `topbar` pozisyonundaki **Header Tertiary** modülü (About, Get Active, Store, Sign Up); aynı menü footer'da da kullanılır |
+| **Üst menü** | Menus → **Main Menu** (öğeler) + System → Site Modules → **Main Menu** | `menu` pozisyonundaki menü modülü (Our 2026 Candidates, Latest News, Events, Working Families Guarantee) |
+| **Manşet** | System → Site Modules → **Manşet (Hero)** | `hero` pozisyonunda özel HTML; gerçek başlık metni, `<strong>` = siyah bölüm |
+| **Get Active** | Menus → **Get Active** (öğeler) + Site Modules → **Get Active** | `below-top` pozisyonu, manşetin yanındaki mor kutu; gerçek 5 öğe (Become a WFP Member, Make your plan to vote, Join a Welcome Gathering, Volunteer with WFP, Apply for our endorsement) |
 | **Dava kartları** | System → Site Modules → **Our fights** | `top-a` pozisyonunda özel HTML; kart zeminleri otomatik sarı/siyah/turuncu döner |
-| **Latest** | Content → Categories → **Latest** kategorisine makale ekle | `main-top` pozisyonundaki **Latest News** modülü (mod_articles, `wfpcards` yerleşimi) bu kategorideki son 3 yazıyı otomatik çeker; sayı/sıralama modül ayarından |
-| **Siyah bant** | System → Site Modules → **Feature (Siyah Bant)** | `main-bottom` pozisyonunda özel HTML (`wfp-feature-sub` + `h2` + `p` + linkler) |
-| **Contribute** | System → Site Modules → **Contribute** | `cta` pozisyonundaki turuncu bant; sabit özel HTML — metni burada değiştirirsin |
-| **Footer büyük menü** | Menus → **Footer Menu** | `footer-a` pozisyonundaki menü modülü |
-| **Footer küçük menü** | Menus → **Footer Legal** | `footer-b` pozisyonu (Privacy policy, Contact) |
-| **Footer iletişim** | System → Site Modules → **Footer Contact** | `footer-c` pozisyonunda özel HTML |
+| **Latest** | Content → Categories → **Latest** kategorisine makale ekle | `main-top` pozisyonundaki **Latest** modülü (mod_articles, `wfpcards`) son 3 yazıyı çeker; altındaki "View All News" + SMS CTA'sı **Latest Extras** modülünde |
+| **Siyah bant** | System → Site Modules → **Feature (Siyah Bant)** | `main-bottom` pozisyonunda özel HTML; gerçek metin + Who We Are / Membership / Our Candidates linkleri |
+| **Contribute** | System → Site Modules → **Contribute** | `cta` pozisyonundaki turuncu bant; gerçek metin + $10/$27/$100/$250/Other Amount butonları |
+| **Footer büyük menü** | Menus → **Footer Menu** | `footer-a`; Sign Up ve Donate öğeleri "Link CSS Style: wfp-underline" ile sarı alt çizgili |
+| **Footer küçük-büyük-harf satır** | Menus → **Tertiary Nav** | `footer-b` pozisyonundaki **Footer Tertiary** modülü |
+| **Footer alt küçük menü** | Menus → **Footer Legal** | `footer-d` pozisyonundaki **Footer Small Menu** (Jobs, Media Center, Public Filings, Media Inquiries, Contact, Privacy Policy) |
+| **Footer posta adresi + Made with** | System → Site Modules → **Footer Contact** | `footer-c` pozisyonunda özel HTML |
 | **Disclaimer + Paid for** | System → Site Modules → **Footer Disclaimer** | `copyright` pozisyonu; `wfp-paid-for` sınıflı div çerçeveli kutuyu üretir |
-| **Sosyal ikonlar, Donate/Join butonları, slogan** | System → Site Template Styles → **WFP - Default** → Advanced | Tema parametreleri |
+| **Sosyal ikonlar, Contribute/Sign Up butonları, slogan** | System → Site Template Styles → **WFP - Default** → Advanced | Tema parametreleri |
 
-Get Active, Latest ve Siyah Bant modülleri yalnızca ana sayfaya atanmıştır
-(Menu Assignment: Home). Footer modülleri tüm sayfalarda görünür.
+Get Active, Latest, Latest Extras ve Siyah Bant modülleri yalnızca ana sayfaya
+atanmıştır (Menu Assignment: Home). Footer ve üst şerit tüm sayfalarda görünür.
+Eski About / Our Fights / Take Action sayfaları menüden kalktı ama linkleri
+kırılmasın diye **Hidden Pages** menüsünde yaşamaya devam ediyor.
 
 ## Demo içerik
 
@@ -100,6 +104,8 @@ Get Active, Latest ve Siyah Bant modülleri yalnızca ana sayfaya atanmıştır
 - `seed_structure.php` — yönetilebilir bölge yapısını kurar: Latest
   kategorisi, Get Active / Footer Menu / Footer Legal menüleri ve öğeleri,
   Latest News (mod_articles), Feature, footer modülleri.
+- `seed_real_content.php` — gerçek ana sayfa içeriğine hizalar: gerçek menüler,
+  Get Active öğeleri, manşet/feature/Contribute metinleri, footer içerikleri.
 - `joomla_db.sql` — bu demonun eksiksiz veritabanı dökümü (test ortamı;
   admin parolası KURULUM.md'dekiyle aynıdır).
 
