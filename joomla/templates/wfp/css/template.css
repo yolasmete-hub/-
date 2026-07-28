@@ -296,14 +296,37 @@ input[type='submit']:hover { background: var(--wfp-orange); }
 
 .wfp-topbar a { color: var(--wfp-beige); }
 
-/* ---------- Header (black bar like mainhed) ---------- */
+/* ---------- Header (turuncu; ince siyah şeridin altında) ---------- */
 .wfp-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--wfp-black);
+  background: var(--wfp-orange);
   color: #fff;
 }
+
+.wfp-header .wfp-brand,
+.wfp-header .wfp-brand:hover { color: var(--wfp-black); }
+
+.wfp-social-header {
+  display: flex;
+  gap: 0.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wfp-social-header a {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #fff;
+  transition: color 250ms ease-in-out;
+}
+
+.wfp-social-header a:hover { color: var(--wfp-black); }
+.wfp-social-header svg { width: 1.15rem; height: 1.15rem; }
 
 .wfp-header-inner {
   display: flex;
@@ -491,8 +514,10 @@ input[type='submit']:hover { background: var(--wfp-orange); }
   padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(2.5rem, 5vw, 5rem);
 }
 
-.wfp-hero h1,
-.wfp-hero h2 {
+.wfp-hero-text h1,
+.wfp-hero-text h2,
+.wfp-hero-content > h1,
+.wfp-hero-content > .mod-custom > h1 {
   color: #fff;
   font-size: clamp(3.4rem, 10.5vw, 8.75rem);
   line-height: 0.9;
@@ -500,12 +525,12 @@ input[type='submit']:hover { background: var(--wfp-orange); }
   max-width: 14ch;
 }
 
-.wfp-hero h1 strong,
-.wfp-hero h2 strong,
-.wfp-hero h1 b,
-.wfp-hero h2 b,
-.wfp-hero h1 em,
-.wfp-hero h2 em {
+.wfp-hero-text h1 strong,
+.wfp-hero-text h2 strong,
+.wfp-hero-text h1 b,
+.wfp-hero-text h2 b,
+.wfp-hero-text h1 em,
+.wfp-hero-text h2 em {
   color: var(--wfp-black);
   font-style: normal;
   font-weight: inherit;
@@ -522,7 +547,7 @@ input[type='submit']:hover { background: var(--wfp-orange); }
   margin-bottom: 0.8em;
 }
 
-.wfp-hero p {
+.wfp-hero-text p {
   font-weight: 700;
   font-size: clamp(1.15rem, 1.8vw, 1.375rem);
   line-height: 1.155;
@@ -626,6 +651,63 @@ input[type='submit']:hover { background: var(--wfp-orange); }
 .wfp-content-wrap { display: grid; gap: 2.5rem; }
 
 .wfp-content-wrap.has-sidebar { grid-template-columns: minmax(0, 1fr) 20rem; }
+
+/* ---------- Latest: kayan renkli kare kartlar (real .slide--bg) ---------- */
+.wfp-slides {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1.25rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
+
+.wfp-slide {
+  flex: 0 0 clamp(240px, 24vw, 320px);
+  aspect-ratio: 1 / 1.04;
+  scroll-snap-align: start;
+  transition: transform 200ms ease-in-out;
+}
+
+.wfp-slide:hover { transform: translateY(-0.3rem); }
+
+.wfp-slide > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 28px;
+  text-decoration: none;
+}
+
+.wfp-slide .wfp-slide-logo { width: 58px; height: 58px; display: block; }
+.wfp-slide .wfp-slide-logo svg { width: 100%; height: 100%; display: block; }
+
+.wfp-slide .wfp-slide-hed {
+  font-family: var(--wfp-body);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1.8vw, 1.75rem);
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: underline;
+  margin: 0;
+  color: inherit;
+}
+
+.wfp-slide:nth-child(3n+1) > a { background: var(--wfp-yellow); color: var(--wfp-black); }
+.wfp-slide:nth-child(3n+1) .wfp-slide-logo { color: var(--wfp-orange); }
+.wfp-slide:nth-child(3n+1) > a:hover { color: var(--wfp-purple); }
+
+.wfp-slide:nth-child(3n+2) > a { background: var(--wfp-black); color: #fff; }
+.wfp-slide:nth-child(3n+2) .wfp-slide-logo { color: var(--wfp-orange); }
+.wfp-slide:nth-child(3n+2) > a:hover { color: var(--wfp-yellow); }
+
+.wfp-slide:nth-child(3n+3) > a { background: var(--wfp-orange); color: var(--wfp-black); }
+.wfp-slide:nth-child(3n+3) .wfp-slide-logo { color: var(--wfp-yellow); }
+.wfp-slide:nth-child(3n+3) > a:hover { color: var(--wfp-purple); }
 
 /* Blog/featured cards, styled like .card: white, underlined Helvetica titles,
    condensed orange dates */
@@ -817,6 +899,27 @@ input[type='submit']:hover { background: var(--wfp-orange); }
   background: var(--wfp-orange);
   color: var(--wfp-black);
   padding-block: clamp(3rem, 6vw, 5rem);
+  position: relative;
+}
+
+/* Contribute: solda görsel yığını, sağda içerik; görsel üstteki bölüme biner */
+.wfp-cta-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 64rem) {
+  .wfp-cta-grid {
+    grid-template-columns: minmax(0, 44%) minmax(0, 1fr);
+    column-gap: 5rem;
+  }
+
+  .wfp-cta-media {
+    margin-top: calc(-1 * clamp(6rem, 12vw, 11rem));
+    z-index: 3;
+  }
 }
 
 .wfp-cta h2,
@@ -1094,44 +1197,105 @@ input, select, textarea { font: inherit; }
   .wfp-cta input[type='email'] { min-width: 0; flex: 1; }
 }
 
-/* ---------- Hero grid: manşet + Get Active kutusu ---------- */
+/* ---------- Hero: solda görsel yığını, sağda başlık + Get Active ---------- */
 .wfp-hero { position: relative; z-index: 2; }
 
 .wfp-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
-@media (min-width: 64rem) {
-  .wfp-hero-grid { grid-template-columns: minmax(0, 1.5fr) minmax(20rem, 1fr); }
+/* mod_custom'ın .mod-custom sarmalayıcısını da grid'e karıştır */
+.wfp-hero-content,
+.wfp-hero-content > .mod-custom,
+.wfp-hero-content > .custom { display: contents; }
 
-  /* Kutu turuncu/mor sınırına basar: aşağı sarkar, mor bölümün üstüne biner
+.wfp-hero-text h1 {
+  margin-top: 0.4em;
+  font-size: clamp(2.8rem, 6.2vw, 5.6rem);
+}
+
+@media (min-width: 64rem) {
+  .wfp-hero-grid {
+    grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+    grid-template-areas:
+      'media text'
+      'media aside';
+    column-gap: 4rem;
+  }
+
+  .wfp-hero-media { grid-area: media; }
+  .wfp-hero-text { grid-area: text; }
+
+  /* Kutu turuncu zeminden aşağı sarkar, bir sonraki bölümün üstüne biner
      (gerçek sitedeki absolute .cta-nav taşması) */
   .wfp-getactive-slot {
+    grid-area: aside;
+    justify-self: end;
     position: relative;
     z-index: 5;
     margin-bottom: -170px;
+    width: 100%;
+    max-width: 420px;
   }
 
-  /* Mor bölümün içeriği sarkan kutunun altından başlasın */
-  .view-home .wfp-section-topa { padding-top: 10rem; }
+  .view-home .wfp-feature-band { padding-top: 8rem; }
 }
+
+/* Görsel yığını: fotoğraf + sol-alta kayık mor blok (real .image-stack) */
+.wfp-image-stack {
+  position: relative;
+  padding: 0 0 52px 52px;
+  margin: 0;
+}
+
+.wfp-image-stack::before {
+  content: '';
+  position: absolute;
+  top: 52px;
+  right: 52px;
+  bottom: 0;
+  left: 0;
+  background: var(--wfp-purple);
+}
+
+.wfp-image-stack img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* Dairesel sarı rozet (real .entry__logo) */
+.wfp-badge {
+  position: absolute;
+  left: -46px;
+  bottom: -18px;
+  width: clamp(130px, 14vw, 210px);
+  aspect-ratio: 1;
+  display: block;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+
+.wfp-badge svg { width: 100%; height: 100%; display: block; }
 
 /* Get Active box (real .cta-nav): purple, yellow underlined heading,
    white links with bordered rows and orange circle arrows */
 .wfp-getactive {
-  background: #3a1968; /* mor zeminden ayrışması için bir ton koyu */
+  background: var(--wfp-purple);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-  padding: 44px 40px 48px;
+  padding: 40px 40px 44px;
   max-width: 420px;
 }
 
 .wfp-getactive-title {
   display: table;
   position: relative;
-  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-size: 1.6rem;
   line-height: 1.09;
   letter-spacing: 0.085em;
   color: var(--wfp-yellow);
@@ -1188,11 +1352,14 @@ input, select, textarea { font: inherit; }
 .wfp-getactive ul.mod-menu a:hover { color: var(--wfp-yellow); }
 .wfp-getactive ul.mod-menu a:hover::after { background: var(--wfp-yellow); }
 
-/* ---------- Feature band (siyah bant, real .feature) ---------- */
+/* ---------- Feature band (siyah bant, real .feature — fotoğraf dokusu) ---------- */
 .wfp-feature-band {
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.72) 50%, rgba(0, 0, 0, 0.9) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.75) 100%),
+    radial-gradient(rgba(255, 255, 255, 0.09) 2px, transparent 2.6px),
+    radial-gradient(60rem 30rem at 70% 40%, #2e2e2e, transparent 70%),
     var(--wfp-black);
+  background-size: auto, 20px 20px, auto, auto;
   color: #fff;
   padding-block: clamp(4rem, 8vw, 7.5rem) clamp(3.5rem, 7vw, 6rem);
 }

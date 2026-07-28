@@ -38,7 +38,7 @@ $tagline     = htmlspecialchars((string) $this->params->get('siteTagline', ''), 
 $donateUrl   = htmlspecialchars((string) $this->params->get('donateUrl', '#'), ENT_QUOTES, 'UTF-8');
 $donateLabel = htmlspecialchars((string) $this->params->get('donateLabel', 'Donate'), ENT_QUOTES, 'UTF-8');
 $joinUrl     = htmlspecialchars((string) $this->params->get('joinUrl', '#'), ENT_QUOTES, 'UTF-8');
-$joinLabel   = htmlspecialchars((string) $this->params->get('joinLabel', 'Join us'), ENT_QUOTES, 'UTF-8');
+$joinLabel   = htmlspecialchars((string) $this->params->get('joinLabel', ''), ENT_QUOTES, 'UTF-8');
 
 $socials = array_filter([
     'twitter'   => (string) $this->params->get('socialTwitter', ''),
@@ -110,7 +110,20 @@ $pageClass    = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : 
 					<?php if ($this->countModules('search', true)) : ?>
 						<jdoc:include type="modules" name="search" style="none" />
 					<?php endif; ?>
-					<a class="wfp-btn wfp-btn-ghost" href="<?php echo $joinUrl; ?>"><?php echo $joinLabel; ?></a>
+					<?php if ($socials) : ?>
+						<ul class="wfp-social wfp-social-header">
+							<?php foreach ($socials as $network => $url) : ?>
+								<li>
+									<a href="<?php echo htmlspecialchars($url, ENT_QUOTES, 'UTF-8'); ?>" aria-label="<?php echo ucfirst($network); ?>" rel="noopener" target="_blank">
+										<?php echo $socialIcons[$network]; ?>
+									</a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+					<?php if ($joinLabel !== '') : ?>
+						<a class="wfp-btn wfp-btn-ghost" href="<?php echo $joinUrl; ?>"><?php echo $joinLabel; ?></a>
+					<?php endif; ?>
 					<a class="wfp-btn wfp-btn-accent" href="<?php echo $donateUrl; ?>"><span class="wfp-heart" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" style="display:inline-block;vertical-align:-2px"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.3 8.9 1.6 5 5.1 4.2 7.3 3.7 9.2 4.6 12 7c2.8-2.4 4.7-3.3 6.9-2.8 3.5.8 4.8 4.7 3.1 7.6C19.5 16.1 12 21 12 21Z"/></svg></span><?php echo $donateLabel; ?></a>
 				</div>
 			</nav>
@@ -129,6 +142,15 @@ $pageClass    = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : 
 						<jdoc:include type="modules" name="below-top" style="wfpgetactive" />
 					</aside>
 				<?php endif; ?>
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<!-- SİYAH BANT — Site Modules » "Feature (Siyah Bant)" (main-bottom) -->
+	<?php if ($this->countModules('main-bottom', true)) : ?>
+		<section class="wfp-feature-band">
+			<div class="wfp-container">
+				<jdoc:include type="modules" name="main-bottom" style="none" />
 			</div>
 		</section>
 	<?php endif; ?>
@@ -175,15 +197,6 @@ $pageClass    = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : 
 			</div>
 		</div>
 	</main>
-
-	<!-- SİYAH BANT — Site Modules » "Feature (Siyah Bant)" (main-bottom) -->
-	<?php if ($this->countModules('main-bottom', true)) : ?>
-		<section class="wfp-feature-band">
-			<div class="wfp-container">
-				<jdoc:include type="modules" name="main-bottom" style="none" />
-			</div>
-		</section>
-	<?php endif; ?>
 
 	<!-- CONTRIBUTE — Site Modules » "Contribute" (cta) -->
 	<?php if ($this->countModules('cta', true)) : ?>
