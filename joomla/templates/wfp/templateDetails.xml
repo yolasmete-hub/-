@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="template" client="site" method="upgrade">
+	<name>wfp</name>
+	<version>1.0.0</version>
+	<creationDate>2026-07</creationDate>
+	<author>Mete Yolaş</author>
+	<authorEmail>yolasmete@gmail.com</authorEmail>
+	<description>TPL_WFP_XML_DESCRIPTION</description>
+	<inheritable>0</inheritable>
+	<files>
+		<filename>templateDetails.xml</filename>
+		<filename>index.php</filename>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>fonts</folder>
+		<folder>images</folder>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/tpl_wfp.ini</language>
+		<language tag="en-GB">en-GB/tpl_wfp.sys.ini</language>
+	</languages>
+	<positions>
+		<position>topbar</position>
+		<position>below-top</position>
+		<position>menu</position>
+		<position>search</position>
+		<position>hero</position>
+		<position>top-a</position>
+		<position>top-b</position>
+		<position>main-top</position>
+		<position>main-bottom</position>
+		<position>breadcrumbs</position>
+		<position>sidebar-right</position>
+		<position>cta</position>
+		<position>footer-a</position>
+		<position>footer-b</position>
+		<position>footer-c</position>
+		<position>copyright</position>
+		<position>debug</position>
+	</positions>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field
+					name="siteTagline"
+					type="text"
+					label="TPL_WFP_TAGLINE_LABEL"
+					default="For the many, not the few"
+					filter="string"
+				/>
+				<field
+					name="donateUrl"
+					type="url"
+					label="TPL_WFP_DONATE_URL_LABEL"
+					default="#"
+					filter="url"
+				/>
+				<field
+					name="donateLabel"
+					type="text"
+					label="TPL_WFP_DONATE_LABEL_LABEL"
+					default="Donate"
+					filter="string"
+				/>
+				<field
+					name="joinUrl"
+					type="url"
+					label="TPL_WFP_JOIN_URL_LABEL"
+					default="#"
+					filter="url"
+				/>
+				<field
+					name="joinLabel"
+					type="text"
+					label="TPL_WFP_JOIN_LABEL_LABEL"
+					default="Join us"
+					filter="string"
+				/>
+				<field
+					name="socialTwitter"
+					type="url"
+					label="TPL_WFP_SOCIAL_TWITTER_LABEL"
+					default=""
+					filter="url"
+				/>
+				<field
+					name="socialFacebook"
+					type="url"
+					label="TPL_WFP_SOCIAL_FACEBOOK_LABEL"
+					default=""
+					filter="url"
+				/>
+				<field
+					name="socialInstagram"
+					type="url"
+					label="TPL_WFP_SOCIAL_INSTAGRAM_LABEL"
+					default=""
+					filter="url"
+				/>
+				<field
+					name="socialYoutube"
+					type="url"
+					label="TPL_WFP_SOCIAL_YOUTUBE_LABEL"
+					default=""
+					filter="url"
+				/>
+				<field
+					name="footerAbout"
+					type="textarea"
+					label="TPL_WFP_FOOTER_ABOUT_LABEL"
+					default="We are a grassroots movement fighting for a nation that works for the many, not the few."
+					filter="safehtml"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
