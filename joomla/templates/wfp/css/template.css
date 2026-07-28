@@ -1095,6 +1095,8 @@ input, select, textarea { font: inherit; }
 }
 
 /* ---------- Hero grid: manşet + Get Active kutusu ---------- */
+.wfp-hero { position: relative; z-index: 2; }
+
 .wfp-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1104,12 +1106,24 @@ input, select, textarea { font: inherit; }
 
 @media (min-width: 64rem) {
   .wfp-hero-grid { grid-template-columns: minmax(0, 1.5fr) minmax(20rem, 1fr); }
+
+  /* Kutu turuncu/mor sınırına basar: aşağı sarkar, mor bölümün üstüne biner
+     (gerçek sitedeki absolute .cta-nav taşması) */
+  .wfp-getactive-slot {
+    position: relative;
+    z-index: 5;
+    margin-bottom: -170px;
+  }
+
+  /* Mor bölümün içeriği sarkan kutunun altından başlasın */
+  .view-home .wfp-section-topa { padding-top: 10rem; }
 }
 
 /* Get Active box (real .cta-nav): purple, yellow underlined heading,
    white links with bordered rows and orange circle arrows */
 .wfp-getactive {
-  background: var(--wfp-purple);
+  background: #3a1968; /* mor zeminden ayrışması için bir ton koyu */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   padding: 44px 40px 48px;
   max-width: 420px;
 }
