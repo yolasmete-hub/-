@@ -99,7 +99,7 @@ $pageClass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 						<jdoc:include type="modules" name="search" style="none" />
 					<?php endif; ?>
 					<a class="wfp-btn wfp-btn-ghost" href="<?php echo $joinUrl; ?>"><?php echo $joinLabel; ?></a>
-					<a class="wfp-btn wfp-btn-accent" href="<?php echo $donateUrl; ?>"><?php echo $donateLabel; ?></a>
+					<a class="wfp-btn wfp-btn-accent" href="<?php echo $donateUrl; ?>"><span class="wfp-heart" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" style="display:inline-block;vertical-align:-2px"><path fill="currentColor" d="M12 21s-7.5-4.9-10-9.2C.3 8.9 1.6 5 5.1 4.2 7.3 3.7 9.2 4.6 12 7c2.8-2.4 4.7-3.3 6.9-2.8 3.5.8 4.8 4.7 3.1 7.6C19.5 16.1 12 21 12 21Z"/></svg></span><?php echo $donateLabel; ?></a>
 				</div>
 			</nav>
 		</div>

@@ -4,21 +4,26 @@
 [workingfamilies.org](https://workingfamilies.org/) (Working Families Party)
 alınarak sıfırdan yazılmış bir Joomla 6 site teması.
 
-> Not: Bu ortamın ağ vekili workingfamilies.org'a doğrudan erişime izin
-> vermediği için tema, sitenin bilinen marka kimliği üzerinden inşa edildi:
-> mor + turuncu palet, krem zemin, kalın kondanse büyük harf başlıklar,
-> aktivist/poster estetiği. Birebir kopya değil, aynı tasarım dilinde özgün
-> bir uygulamadır (logo ve içerik dahil hiçbir varlık kopyalanmadı).
+> Not: Tema, gerçek sitenin stil dosyasından (WordPress "ms-starter" teması)
+> alınan tasarım token'ları birebir kullanılarak yazıldı. Logo ve içerik
+> dahil hiçbir telifli varlık kopyalanmadı; işaretleme ve CSS sıfırdan,
+> Joomla'ya göre yazıldı.
 
-## Tasarım dili
+## Tasarım dili (gerçek site token'ları)
 
 | Öğe | Değer |
 |---|---|
-| Ana mor | `#5b21b6` (koyu tonlar `#3b1470`, `#2a0e52`) |
-| Vurgu turuncusu | `#ff5c1c` |
-| Zemin | Krem `#faf5ec` |
-| Başlık fontu | Barlow Condensed 500–800 (büyük harf, kondanse) |
-| Metin fontu | Archivo 400–700 |
+| Mor | `#481f82` (ana sayfa içerik bandı, buton gölgeleri) |
+| Turuncu-kırmızı | `#f3563c` (hero ve CTA bandı, başlık alt çizgileri, tarihler) |
+| Avokado sarısı | `#eaf96e` (butonlar, hover'lar, mor zeminde başlıklar) |
+| Zemin | Bej `#e9e7df`; header ve footer siyah `#000` |
+| Bağlantılar | `#1d4dc7` (içerikte `#461f83`), hover `#2f80ed`/turuncu |
+| Başlık fontu | Barlow Condensed (gerçek sitedeki ticari `pf_venue_condensed` fontunun açık lisanslı muadili) |
+| Metin fontu | Helvetica Neue yığını (yedek: gömülü Archivo) |
+
+İmza desenler: kayık blok gölgeli butonlar (5px ofsetli `::before`),
+başlıklarda 3 piksel turuncu alt çizgi, kart tarihlerinde kondanse büyük
+harf turuncu, dava kartlarında sarı/siyah/turuncu ardışık zemin dönüşümü.
 
 Fontlar `@fontsource` npm paketlerinden alınıp temaya gömüldü (OFL lisansı,
 `latin` + Türkçe karakterler için `latin-ext` setleri). Dış CDN bağımlılığı yok.
